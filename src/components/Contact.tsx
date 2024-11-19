@@ -77,7 +77,7 @@ export default function Contact() {
                 <Mail className="h-6 w-6 text-blue-600 mt-1" />
                 <div>
                   <h3 className="text-gray-900 font-semibold mb-1">Email</h3>
-                  <p className="text-gray-600">growth@scalebrandlabs.com</p>
+                  <p className="text-gray-600">growth@ScaleBrandsLab.com</p>
                 </div>
               </div>
             </div>

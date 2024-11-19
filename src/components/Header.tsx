@@ -10,7 +10,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Rocket className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold">ScaleBrandLabs</span>
+            <span className="text-2xl font-bold">ScaleBrandsLab</span>
           </div>
           
           {/* Desktop Menu */}
