@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Do you only do short-form vidoes?",
-    answer: "That's what we do the best but our video artists can get any job done. Book a call for custom requirements."
+    answer: "That's what we do the best but our video artists can get any job done. Send us an email for custom requirements."
   },
   {
     question: "Is there a guarantee for my growth?",
@@ -62,12 +62,6 @@ export default function FAQ() {
               )}
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-            Book a Free Call
-          </button>
         </div>
       </div>
     </section>

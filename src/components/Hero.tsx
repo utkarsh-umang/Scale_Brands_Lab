@@ -15,21 +15,16 @@ export default function Hero() {
           <div className="bg-blue-50 p-6 rounded-lg mb-8">
             <p className="font-semibold text-blue-800 mb-4">Our Client Success Stories:</p>
             <ul className="space-y-2 text-blue-700">
-              <li>🚀 Katie Melissa: 247k+ on Instagram</li>
+              <li>🚀 Katie Melissa: 240k+ on Instagram</li>
               <li>🚀 Mind Hustler: 350k+ on Twitter</li>
-              <li>🚀 Nutty History: 600k+ on YouTube</li>
+              <li>🚀 Nutty Productions: 600k+ on YouTube</li>
             </ul>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold 
-              flex items-center justify-center hover:bg-blue-700 transition-colors">
-              Book a Free Call
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
-            <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold 
-              hover:bg-blue-600 hover:text-white transition-all">
+            <a href="#results" className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold 
+              hover:bg-blue-600 hover:text-white transition-all text-center">
               View Case Studies
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
