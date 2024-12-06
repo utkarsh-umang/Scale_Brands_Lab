@@ -5,21 +5,21 @@ const testimonials = [
   {
     name: "Katie Melissa",
     role: "Instagram Influencer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    content: "ScaleBrandsLab helped me reach 247k+ followers on Instagram. Their viral content formula really works!",
-    stats: "247k+ Followers"
+    image: "src/assets/katie_melissa.jpg",
+    content: "ScaleBrandsLab helped me reach 240k+ followers on Instagram. Their viral content formula really works!",
+    stats: "240k+ Followers"
   },
   {
     name: "Mind Hustler",
     role: "Twitter Influencer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+    image: "src/assets/mind_hustler.jpg",
     content: "Grew my Twitter following to 350k+ with their strategies. The engagement rates are incredible!",
     stats: "350k+ Followers"
   },
   {
-    name: "Nutty History",
+    name: "Nutty Productions",
     role: "YouTube Creator",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+    image: "src/assets/nutty_productions.jpg",
     content: "Reached 600k+ subscribers on YouTube thanks to ScaleBrandsLab' content optimization techniques.",
     stats: "600k+ Subscribers"
   }
