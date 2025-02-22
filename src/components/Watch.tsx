@@ -36,15 +36,10 @@ export default function Watch() {
               Your browser does not support the video tag.
             </video>
           </div>
+        </div>
         
-          <div className="max-w-5xl mx-auto mt-6">
-            <h1 className="text-2xl font-bold text-white mb-4">Real Estate Lead Engine System</h1>
-            {/* <div className="flex items-center space-x-4 text-gray-400">
-              <span>Views: 1,234</span>
-              <span>•</span>
-              <span>Posted: 2 days ago</span>
-            </div> */}
-          </div>
+        <div className="max-w-5xl mx-auto mt-6">
+          <h1 className="text-2xl font-bold text-white mb-4">Real Estate Lead Engine System</h1>
         </div>
       </div>
     </div>

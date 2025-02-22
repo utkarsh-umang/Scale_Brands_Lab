@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
+import { TrendingUp, Users, Award } from 'lucide-react';
 
 export default function Hero() {
   return (
