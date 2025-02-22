@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
+import { TrendingUp, Users, Award, Play } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -24,6 +23,12 @@ export default function Hero() {
             <a href="#results" className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold 
               hover:bg-blue-600 hover:text-white transition-all text-center">
               View Case Studies
+            </a>
+
+            <a href="/watch" className="flex items-center gap-2 border-2 border-blue-600 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold 
+              hover:bg-blue-700 hover:border-blue-700 hover:scale-105 transition-all text-center group">
+              <Play size={20} className="group-hover:animate-pulse" />
+              Watch Demo Video
             </a>
           </div>
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search, PenTool, Share2, Settings } from 'lucide-react';
 
 const services = [

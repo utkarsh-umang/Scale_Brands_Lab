@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shield, Flame, Users, Trophy } from 'lucide-react';
 
 const programs = [
