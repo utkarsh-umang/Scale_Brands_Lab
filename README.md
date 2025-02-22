@@ -1,6 +1,6 @@
 # Scale Brands Lab
 
-A single-page website created using [bolt.new](https://bolt.new) and built with Vite, TypeScript, and React.
+A single-page website built with Vite, TypeScript, and React.
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ npm run dev
 This will launch the application locally, allowing you to view it in your browser.
 
 ## About
-Website created using [bolt.new](https://bolt.new) and built with Vite, TypeScript, and React.
+Website built with Vite, TypeScript, and React.
 
 ## Technologies Used
 - **Vite**: For fast builds and hot-reloading
