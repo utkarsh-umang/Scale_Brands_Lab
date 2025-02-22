@@ -1,14 +1,14 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Results from './components/Results';
 import FAQ from './components/FAQ';
+import Watch from './components/Watch';
 
-function App() {
+function HomePage() {
   return (
-    <div className="bg-white min-h-screen">
-      <Header />
+    <>
       <main>
         <Hero />
         <Services />
@@ -20,7 +20,21 @@ function App() {
           <p>&copy; {new Date().getFullYear()} ScaleBrandsLab. All rights reserved.</p>
         </div>
       </footer>
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="bg-white min-h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/watch" element={<Watch />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
