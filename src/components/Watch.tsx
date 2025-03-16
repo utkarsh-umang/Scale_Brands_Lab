@@ -32,7 +32,7 @@ export default function Watch() {
               autoPlay
               playsInline
             >
-              <source src={`https://scale-brands.s3.ap-south-1.amazonaws.com/videoplayback.mp4`} type="video/mp4" />
+              <source src={`https://scale-brands.s3.ap-south-1.amazonaws.com/Scalebrandslab_watch.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
