@@ -6,6 +6,11 @@ import Results from './components/Results';
 import FAQ from './components/FAQ';
 import Watch from './components/Watch';
 import QuickOverview from './components/QuickOverview';
+import ContactPage from './components/Contact';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import RefundPolicy from './components/RefundPolicy';
+import Footer from './components/Footer';
 
 function HomePage() {
   return (
@@ -16,11 +21,7 @@ function HomePage() {
         <Results />
         <FAQ />
       </main>
-      <footer className="bg-gray-900 text-gray-400 py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; {new Date().getFullYear()} ScaleBrandsLab. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
@@ -33,7 +34,11 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/watch" element={<Watch />} />
-          <Route path="/quick-overview" element={<QuickOverview />}/>
+          <Route path="/quick-overview" element={<QuickOverview />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
         </Routes>
       </div>
     </BrowserRouter>

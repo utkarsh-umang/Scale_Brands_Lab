@@ -6,50 +6,82 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isWatchPage = location.pathname === '/watch';
+  const isHomePage = location.pathname === '/';
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
-    if (isWatchPage) {
-      // If on watch page, navigate to home first
+    setIsMenuOpen(false);
+    if (isHomePage) {
+      const element = document.querySelector(path);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    } else {
       navigate('/');
       // Wait for navigation to complete then scroll
       setTimeout(() => {
         const element = document.querySelector(path);
         element?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
-    } else {
-      // If already on home page, just scroll
-      const element = document.querySelector(path);
-      element?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    navigate('/contact');
+  };
+
   return (
-    <header className="fixed w-full bg-white/95 text-gray-900 z-50 shadow-sm">
+    <header className="fixed w-full bg-white/95 text-gray-900 z-50 shadow-sm backdrop-blur-sm">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div 
             className="flex items-center space-x-2 cursor-pointer" 
-            onClick={() => navigate('/')}
+            onClick={handleLogoClick}
           >
             <Rocket className="h-8 w-8 text-blue-600" />
             <span className="text-2xl font-bold">ScaleBrandsLab</span>
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            <a href="#home" onClick={(e) => handleNavigation(e, '#home')} className="hover:text-blue-600 transition-colors">
+          <div className="hidden md:flex items-center space-x-8">
+            <a 
+              href="#home" 
+              onClick={(e) => handleNavigation(e, '#home')} 
+              className="hover:text-blue-600 transition-colors"
+            >
               Home
             </a>
-            <a href="#services" onClick={(e) => handleNavigation(e, '#services')} className="hover:text-blue-600 transition-colors">
+            <a 
+              href="#services" 
+              onClick={(e) => handleNavigation(e, '#services')} 
+              className="hover:text-blue-600 transition-colors"
+            >
               Services
             </a>
-            <a href="#results" onClick={(e) => handleNavigation(e, '#results')} className="hover:text-blue-600 transition-colors">
+            <a 
+              href="#results" 
+              onClick={(e) => handleNavigation(e, '#results')} 
+              className="hover:text-blue-600 transition-colors"
+            >
               Results
             </a>
-            <a href="#faq" onClick={(e) => handleNavigation(e, '#faq')} className="hover:text-blue-600 transition-colors">
+            <a 
+              href="#faq" 
+              onClick={(e) => handleNavigation(e, '#faq')} 
+              className="hover:text-blue-600 transition-colors"
+            >
               FAQ
+            </a>
+            <a 
+              href="/contact" 
+              onClick={handleContactClick}
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Contact
             </a>
           </div>
 
@@ -64,19 +96,42 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pt-4 pb-2">
+          <div className="md:hidden pt-4 pb-2 bg-white/95 backdrop-blur-sm">
             <div className="flex flex-col space-y-4">
-              <a href="#home" onClick={(e) => handleNavigation(e, '#home')} className="hover:text-blue-600 transition-colors">
+              <a 
+                href="#home" 
+                onClick={(e) => handleNavigation(e, '#home')} 
+                className="hover:text-blue-600 transition-colors py-2"
+              >
                 Home
               </a>
-              <a href="#services" onClick={(e) => handleNavigation(e, '#services')} className="hover:text-blue-600 transition-colors">
+              <a 
+                href="#services" 
+                onClick={(e) => handleNavigation(e, '#services')} 
+                className="hover:text-blue-600 transition-colors py-2"
+              >
                 Services
               </a>
-              <a href="#results" onClick={(e) => handleNavigation(e, '#results')} className="hover:text-blue-600 transition-colors">
+              <a 
+                href="#results" 
+                onClick={(e) => handleNavigation(e, '#results')} 
+                className="hover:text-blue-600 transition-colors py-2"
+              >
                 Results
               </a>
-              <a href="#faq" onClick={(e) => handleNavigation(e, '#faq')} className="hover:text-blue-600 transition-colors">
+              <a 
+                href="#faq" 
+                onClick={(e) => handleNavigation(e, '#faq')} 
+                className="hover:text-blue-600 transition-colors py-2"
+              >
                 FAQ
+              </a>
+              <a 
+                href="/contact" 
+                onClick={handleContactClick}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
+              >
+                Contact
               </a>
             </div>
           </div>
