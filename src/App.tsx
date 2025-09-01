@@ -11,6 +11,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import RefundPolicy from './components/RefundPolicy';
 import Footer from './components/Footer';
+import SimplePayUButton from './components/PayuPayment';
 
 function HomePage() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/pay" element={<SimplePayUButton />} />
         </Routes>
       </div>
     </BrowserRouter>
