@@ -6,6 +6,7 @@ import Results from './components/Results';
 import FAQ from './components/FAQ';
 import Watch from './components/Watch';
 import QuickOverview from './components/QuickOverview';
+import ClaimVideo from './components/ClaimVideo';
 import ContactPage from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
@@ -36,6 +37,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/watch" element={<Watch />} />
           <Route path="/quick-overview" element={<QuickOverview />} />
+          <Route path="/claimvideo" element={<ClaimVideo />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
