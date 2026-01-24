@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -13,6 +13,7 @@ import TermsOfService from './components/TermsOfService';
 import RefundPolicy from './components/RefundPolicy';
 import Footer from './components/Footer';
 import SimplePayUButton from './components/PayuPayment';
+import Clips from './components/Clips';
 
 function HomePage() {
   return (
@@ -28,23 +29,33 @@ function HomePage() {
   );
 }
 
+function AppContent() {
+  const location = useLocation();
+  const isClipsPage = location.pathname === '/clips';
+
+  return (
+    <div className={isClipsPage ? "min-h-screen" : "bg-white min-h-screen"}>
+      {!isClipsPage && <Header />}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/watch" element={<Watch />} />
+        <Route path="/quick-overview" element={<QuickOverview />} />
+        <Route path="/claimvideo" element={<ClaimVideo />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/pay" element={<SimplePayUButton />} />
+        <Route path="/clips" element={<Clips />} />
+      </Routes>
+    </div>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-white min-h-screen">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/watch" element={<Watch />} />
-          <Route path="/quick-overview" element={<QuickOverview />} />
-          <Route path="/claimvideo" element={<ClaimVideo />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-          <Route path="/pay" element={<SimplePayUButton />} />
-        </Routes>
-      </div>
+      <AppContent />
     </BrowserRouter>
   );
 }
