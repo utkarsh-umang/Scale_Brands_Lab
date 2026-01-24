@@ -9,12 +9,14 @@ export default function Clips() {
   ];
 
   // Ensure body and html background is set when component mounts
+  // Using blue-600 (rgb(37, 99, 235)) from the Contact button
   React.useEffect(() => {
     const originalBodyBg = document.body.style.backgroundColor;
     const originalHtmlBg = document.documentElement.style.backgroundColor;
     
-    document.body.style.backgroundColor = 'rgb(15, 44, 94)';
-    document.documentElement.style.backgroundColor = 'rgb(15, 44, 94)';
+    // blue-600: rgb(37, 99, 235), using darker blue-700 for base
+    document.body.style.backgroundColor = 'rgb(29, 78, 216)';
+    document.documentElement.style.backgroundColor = 'rgb(29, 78, 216)';
     
     return () => {
       document.body.style.backgroundColor = originalBodyBg;
@@ -23,21 +25,21 @@ export default function Clips() {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: 'rgb(15, 44, 94)' }}>
+    <div className="min-h-screen relative overflow-hidden pt-16" style={{ backgroundColor: 'rgb(29, 78, 216)' }}>
       {/* Animated gradient overlay */}
       <div 
         className="fixed inset-0 z-0 animate-gradient-shift"
         style={{
-          background: 'linear-gradient(45deg, rgba(106, 17, 203, 0.2) 0%, rgba(37, 117, 252, 0.2) 100%)',
+          background: 'linear-gradient(45deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.2) 100%)',
           backgroundSize: '200% 200%',
         }}
       />
       
-      {/* Main background gradient */}
+      {/* Main background gradient using blue-600 (rgb(37, 99, 235)) from Contact button */}
       <div 
         className="fixed inset-0 z-[-1]"
         style={{
-          background: 'linear-gradient(to bottom, rgb(26, 72, 142), rgb(15, 44, 94))',
+          background: 'linear-gradient(to bottom, rgb(37, 99, 235), rgb(29, 78, 216))',
         }}
       />
 

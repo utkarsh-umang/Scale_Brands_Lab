@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -30,15 +30,10 @@ function HomePage() {
 }
 
 function AppContent() {
-  const location = useLocation();
-  const isClipsPage = location.pathname === '/clips';
-
   return (
     <>
-      <div style={{ display: isClipsPage ? 'none' : 'block' }}>
-        <Header />
-      </div>
-      <div className={isClipsPage ? "" : "bg-white min-h-screen"}>
+      <Header />
+      <div className="bg-white min-h-screen">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/watch" element={<Watch />} />
