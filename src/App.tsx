@@ -34,21 +34,25 @@ function AppContent() {
   const isClipsPage = location.pathname === '/clips';
 
   return (
-    <div className={isClipsPage ? "min-h-screen" : "bg-white min-h-screen"}>
-      {!isClipsPage && <Header />}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/watch" element={<Watch />} />
-        <Route path="/quick-overview" element={<QuickOverview />} />
-        <Route path="/claimvideo" element={<ClaimVideo />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/refund-policy" element={<RefundPolicy />} />
-        <Route path="/pay" element={<SimplePayUButton />} />
-        <Route path="/clips" element={<Clips />} />
-      </Routes>
-    </div>
+    <>
+      <div style={{ display: isClipsPage ? 'none' : 'block' }}>
+        <Header />
+      </div>
+      <div className={isClipsPage ? "" : "bg-white min-h-screen"}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/watch" element={<Watch />} />
+          <Route path="/quick-overview" element={<QuickOverview />} />
+          <Route path="/claimvideo" element={<ClaimVideo />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/pay" element={<SimplePayUButton />} />
+          <Route path="/clips" element={<Clips />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

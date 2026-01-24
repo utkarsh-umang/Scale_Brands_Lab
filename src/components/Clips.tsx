@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Clips() {
   const videos = [
     { id: 1, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/1.mp4' },
@@ -6,13 +8,28 @@ export default function Clips() {
     { id: 4, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/4.mp4' },
   ];
 
+  // Ensure body and html background is set when component mounts
+  React.useEffect(() => {
+    const originalBodyBg = document.body.style.backgroundColor;
+    const originalHtmlBg = document.documentElement.style.backgroundColor;
+    
+    document.body.style.backgroundColor = 'rgb(15, 44, 94)';
+    document.documentElement.style.backgroundColor = 'rgb(15, 44, 94)';
+    
+    return () => {
+      document.body.style.backgroundColor = originalBodyBg;
+      document.documentElement.style.backgroundColor = originalHtmlBg;
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: 'rgb(15, 44, 94)' }}>
       {/* Animated gradient overlay */}
       <div 
         className="fixed inset-0 z-0 animate-gradient-shift"
         style={{
           background: 'linear-gradient(45deg, rgba(106, 17, 203, 0.2) 0%, rgba(37, 117, 252, 0.2) 100%)',
+          backgroundSize: '200% 200%',
         }}
       />
       
