@@ -35,59 +35,57 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-white/95 text-gray-900 z-50 shadow-sm backdrop-blur-sm">
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div 
-            className="flex items-center space-x-2 cursor-pointer" 
-            onClick={handleLogoClick}
-          >
-            <Rocket className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold">ScaleBrandsLab</span>
-          </div>
-          
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#home" 
-              onClick={(e) => handleNavigation(e, '#home')} 
-              className="hover:text-blue-600 transition-colors"
+    <header className="fixed w-full bg-[#1a1a1a] text-white z-50">
+      <nav className="px-[60px] py-5 max-md:px-8 max-md:py-4">
+        <div className="flex items-center justify-between max-md:flex-wrap">
+          {/* Left Navigation */}
+          <div className="flex gap-[35px] items-center flex-1 max-md:flex-none max-md:order-2 max-md:w-full max-md:justify-center max-md:mt-4 max-md:gap-5">
+            <a
+              href="#home"
+              onClick={(e) => handleNavigation(e, '#home')}
+              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
             >
               Home
             </a>
-            <a 
-              href="#services" 
-              onClick={(e) => handleNavigation(e, '#services')} 
-              className="hover:text-blue-600 transition-colors"
+            <a
+              href="#results"
+              onClick={(e) => handleNavigation(e, '#results')}
+              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
             >
-              Services
+              Our Work
             </a>
-            <a 
-              href="#results" 
-              onClick={(e) => handleNavigation(e, '#results')} 
-              className="hover:text-blue-600 transition-colors"
+            <a
+              href="#services"
+              onClick={(e) => handleNavigation(e, '#services')}
+              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
             >
-              Results
+              Resources
             </a>
-            <a 
-              href="#faq" 
-              onClick={(e) => handleNavigation(e, '#faq')} 
-              className="hover:text-blue-600 transition-colors"
-            >
-              FAQ
-            </a>
-            <a 
-              href="/contact" 
+          </div>
+
+          {/* Center Logo */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 cursor-pointer max-md:relative max-md:left-auto max-md:transform-none max-md:order-1 flex items-center gap-2"
+            onClick={handleLogoClick}
+          >
+            <Rocket className="h-6 w-6" />
+            <span className="text-lg font-extrabold tracking-wide uppercase">ScaleBrandsLab</span>
+          </div>
+
+          {/* Right CTA */}
+          <div className="flex-1 flex justify-end max-md:flex-none max-md:order-3 max-md:mt-4">
+            <a
+              href="/contact"
               onClick={handleContactClick}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-transparent text-white px-[30px] py-[11px] rounded-full font-semibold text-sm border-[1.5px] border-white/30 hover:bg-white hover:text-[#1a1a1a] hover:border-white transition-all"
             >
-              Contact
+              Start Today
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden"
+          <button
+            className="md:hidden absolute right-8 top-5"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -96,42 +94,42 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pt-4 pb-2 bg-white/95 backdrop-blur-sm">
+          <div className="md:hidden pt-4 pb-2">
             <div className="flex flex-col space-y-4">
-              <a 
-                href="#home" 
-                onClick={(e) => handleNavigation(e, '#home')} 
-                className="hover:text-blue-600 transition-colors py-2"
+              <a
+                href="#home"
+                onClick={(e) => handleNavigation(e, '#home')}
+                className="text-white/85 hover:text-white transition-colors py-2"
               >
                 Home
               </a>
-              <a 
-                href="#services" 
-                onClick={(e) => handleNavigation(e, '#services')} 
-                className="hover:text-blue-600 transition-colors py-2"
+              <a
+                href="#services"
+                onClick={(e) => handleNavigation(e, '#services')}
+                className="text-white/85 hover:text-white transition-colors py-2"
               >
                 Services
               </a>
-              <a 
-                href="#results" 
-                onClick={(e) => handleNavigation(e, '#results')} 
-                className="hover:text-blue-600 transition-colors py-2"
+              <a
+                href="#results"
+                onClick={(e) => handleNavigation(e, '#results')}
+                className="text-white/85 hover:text-white transition-colors py-2"
               >
                 Results
               </a>
-              <a 
-                href="#faq" 
-                onClick={(e) => handleNavigation(e, '#faq')} 
-                className="hover:text-blue-600 transition-colors py-2"
+              <a
+                href="#faq"
+                onClick={(e) => handleNavigation(e, '#faq')}
+                className="text-white/85 hover:text-white transition-colors py-2"
               >
                 FAQ
               </a>
-              <a 
-                href="/contact" 
+              <a
+                href="/contact"
                 onClick={handleContactClick}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
+                className="bg-transparent text-white px-4 py-2 rounded-full border-[1.5px] border-white/30 hover:bg-white hover:text-[#1a1a1a] transition-all text-center"
               >
-                Contact
+                Start Today
               </a>
             </div>
           </div>
