@@ -4,30 +4,13 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center items-center text-center px-10 pt-40 pb-20 overflow-hidden bg-white max-md:px-8 max-md:pt-28 max-md:pb-16">
       {/* Blue Gradient Background */}
-      <div
-        className="absolute top-0 left-0 right-0 bottom-0 z-[1]"
-        style={{
-          background: `
-            radial-gradient(ellipse 80% 60% at 50% 20%, 
-              rgba(147, 197, 253, 0.25) 0%,
-              rgba(96, 165, 250, 0.15) 30%,
-              rgba(59, 130, 246, 0.08) 50%,
-              transparent 70%
-            ),
-            radial-gradient(ellipse 70% 50% at 20% 80%,
-              rgba(191, 219, 254, 0.2) 0%,
-              rgba(147, 197, 253, 0.1) 40%,
-              transparent 60%
-            ),
-            radial-gradient(ellipse 60% 50% at 80% 70%,
-              rgba(186, 230, 253, 0.18) 0%,
-              rgba(125, 211, 252, 0.1) 40%,
-              transparent 60%
-            ),
-            #fff
-          `
-        }}
-      />
+      {/* Blue Gradient Background - Blob Effect */}
+      <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[550px] bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#2563eb] opacity-20 blur-[100px] rounded-[100%] z-[1] pointer-events-none" />
+
+      {/* Floating Blur Blobs for Depth */}
+      <div className="absolute top-[10%] left-[10%] w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow z-[1] pointer-events-none" />
+      <div className="absolute top-[20%] right-[10%] w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-medium animation-delay-2000 z-[1] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[20%] w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-fast animation-delay-4000 z-[1] pointer-events-none" />
 
       {/* Floating Social Media Icons with Glassy Effect */}
       <div className="absolute top-0 left-0 right-0 bottom-0 z-[2] pointer-events-none">
