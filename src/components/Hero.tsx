@@ -1,4 +1,4 @@
-import { User } from 'lucide-react';
+
 
 export default function Hero() {
   return (
@@ -54,8 +54,8 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-[3] max-w-[1150px]">
-        <h1 className="text-[78px] font-extrabold leading-[1.1] mb-[22px] tracking-tight text-[#1a1a1a] max-lg:text-[60px] max-md:text-[42px] max-md:tracking-normal">
+      <div className="relative z-[3] max-w-[1280px]">
+        <h1 className="text-[64px] font-extrabold leading-[1.1] mb-[22px] tracking-tight text-[#1a1a1a] max-lg:text-[50px] max-md:text-[36px] max-md:tracking-normal">
           Built for <span className="text-[#2563eb]">Content Creators</span> to scale<br />
           without lifting a finger
         </h1>
@@ -70,38 +70,49 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Client Success Cards */}
       <div className="relative z-[3] mt-[85px] flex gap-[22px] justify-center max-md:flex-col max-md:items-center max-md:gap-5 max-md:mt-[60px]">
         {/* Card 1 - Katie Melissa */}
-        <div className="w-[250px] h-[330px] rounded-[28px] glass shadow-[0_8px_32px_rgba(31,38,135,0.12)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-2 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(31,38,135,0.2)] max-md:w-full max-md:max-w-[280px] max-md:rotate-0">
-          <div className="w-full h-[230px] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-            <User className="w-24 h-24 text-gray-300" strokeWidth={1.5} />
+        <div className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-2 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] border-[5px] border-white group">
+          <div className="absolute inset-0 bg-gray-200">
+            <img
+              src="https://scale-brands.s3.ap-south-1.amazonaws.com/katie_melissa.jpg"
+              alt="Katie Melissa"
+              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+            />
           </div>
-          <div className="p-6 text-left bg-white/80 backdrop-blur-[10px]">
-            <div className="font-extrabold text-lg text-[#1a1a1a] mb-1.5 tracking-tight">Katie Melissa</div>
-            <div className="text-sm text-[#2563eb] font-semibold">240k+ on Instagram</div>
+          <div className="absolute inset-x-0 bottom-0 h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10 flex flex-col justify-end p-6 pb-7 text-center">
+            <div className="font-extrabold text-2xl text-white mb-1 tracking-tight leading-none uppercase">Katie<br />Melissa</div>
+            <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">240k+ Followers</div>
           </div>
         </div>
 
         {/* Card 2 - Mind Hustler */}
-        <div className="w-[250px] h-[330px] rounded-[28px] glass shadow-[0_8px_32px_rgba(31,38,135,0.12)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) rotate-2 translate-y-5 hover:rotate-0 hover:translate-y-3 hover:shadow-[0_20px_50px_rgba(31,38,135,0.2)] max-md:w-full max-md:max-w-[280px] max-md:rotate-0 max-md:translate-y-0">
-          <div className="w-full h-[230px] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-            <User className="w-24 h-24 text-gray-300" strokeWidth={1.5} />
+        <div className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) rotate-2 translate-y-5 hover:rotate-0 hover:translate-y-3 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] border-[5px] border-white max-md:translate-y-0 group">
+          <div className="absolute inset-0 bg-gray-200">
+            <img
+              src="https://scale-brands.s3.ap-south-1.amazonaws.com/mind_hustler.jpg"
+              alt="Mind Hustler"
+              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+            />
           </div>
-          <div className="p-6 text-left bg-white/80 backdrop-blur-[10px]">
-            <div className="font-extrabold text-lg text-[#1a1a1a] mb-1.5 tracking-tight">Mind Hustler</div>
-            <div className="text-sm text-[#2563eb] font-semibold">350k+ on Twitter</div>
+          <div className="absolute inset-x-0 bottom-0 h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10 flex flex-col justify-end p-6 pb-7 text-center">
+            <div className="font-extrabold text-2xl text-white mb-1 tracking-tight leading-none uppercase">Mind<br />Hustler</div>
+            <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">350k+ Followers</div>
           </div>
         </div>
 
         {/* Card 3 - Nutty Productions */}
-        <div className="w-[250px] h-[330px] rounded-[28px] glass shadow-[0_8px_32px_rgba(31,38,135,0.12)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-1 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(31,38,135,0.2)] max-md:w-full max-md:max-w-[280px] max-md:rotate-0">
-          <div className="w-full h-[230px] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-            <User className="w-24 h-24 text-gray-300" strokeWidth={1.5} />
+        <div className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-1 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] border-[5px] border-white group">
+          <div className="absolute inset-0 bg-gray-200">
+            <img
+              src="https://scale-brands.s3.ap-south-1.amazonaws.com/nutty_productions.jpg"
+              alt="Nutty Productions"
+              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+            />
           </div>
-          <div className="p-6 text-left bg-white/80 backdrop-blur-[10px]">
-            <div className="font-extrabold text-lg text-[#1a1a1a] mb-1.5 tracking-tight">Nutty Productions</div>
-            <div className="text-sm text-[#2563eb] font-semibold">600k+ on YouTube</div>
+          <div className="absolute inset-x-0 bottom-0 h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10 flex flex-col justify-end p-6 pb-7 text-center">
+            <div className="font-extrabold text-2xl text-white mb-1 tracking-tight leading-none uppercase">Nutty<br />Productions</div>
+            <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">600k+ Subs</div>
           </div>
         </div>
       </div>
