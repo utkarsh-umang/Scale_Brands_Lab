@@ -16,6 +16,16 @@ export default function Clips() {
     { id: 12, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/12.mp4' },
     { id: 13, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/13.mp4' },
     { id: 14, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/14.mp4' },
+    { id: 15, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/15.mp4' },
+    { id: 16, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/16.mp4' },
+    { id: 17, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/17.mp4' },
+    { id: 18, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/18.mp4' },
+    { id: 19, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/19.mp4' },
+    { id: 20, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/20.mp4' },
+    { id: 21, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/21.mp4' },
+    { id: 22, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/22.mp4' },
+    { id: 23, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/23.mp4' },
+    { id: 24, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/24.mp4' },
   ];
 
   // Ensure body and html background is set when component mounts
