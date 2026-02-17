@@ -10,6 +10,12 @@ export default function Clips() {
     { id: 6, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/6.mp4' },
     { id: 7, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/7.mp4' },
     { id: 8, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/8.mp4' },
+    { id: 9, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/9.mp4' },
+    { id: 10, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/10.mp4' },
+    { id: 11, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/11.mp4' },
+    { id: 12, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/12.mp4' },
+    { id: 13, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/13.mp4' },
+    { id: 14, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/14.mp4' },
   ];
 
   // Ensure body and html background is set when component mounts
