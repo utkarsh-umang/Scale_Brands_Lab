@@ -105,3 +105,45 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
+
+/* Custom Swiper Navigation Styles */
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-swiper-button-next svg,
+.custom-swiper-button-prev svg {
+  transition: transform 0.3s ease;
+}
+
+.custom-swiper-button-next:hover svg {
+  transform: translateX(3px);
+}
+
+.custom-swiper-button-prev:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Swiper Pagination Customization */
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background: rgba(30, 64, 175, 0.2) !important;
+  opacity: 1 !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1e40af !important;
+  width: 28px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 10px rgba(30, 64, 175, 0.3);
+}
+
+/* Ensure Swiper container doesn't cut off shadows */
+.mySwiper {
+  padding-bottom: 80px !important;
+  overflow: visible !important;
+}

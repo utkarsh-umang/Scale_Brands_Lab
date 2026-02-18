@@ -4,9 +4,31 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isVisible, setIsVisible] = React.useState(true);
+  const [lastScrollY, setLastScrollY] = React.useState(0);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down
+        setIsVisible(false);
+        setIsMenuOpen(false); // Close mobile menu when hiding
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
@@ -35,7 +57,10 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-[#1a1a1a] text-white z-50">
+    <header
+      className={`fixed w-full bg-[#1a1a1a] text-white z-50 transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+    >
       <nav className="px-[60px] py-5 max-md:px-8 max-md:py-4">
         <div className="flex items-center justify-between max-md:flex-wrap">
           {/* Left Navigation */}
