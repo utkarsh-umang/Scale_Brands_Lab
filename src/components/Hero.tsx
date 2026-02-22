@@ -62,12 +62,12 @@ export default function Hero() {
         <p className="text-[17px] text-[#1a1a1a]/60 mb-[42px] font-normal leading-[1.5] max-w-[700px] mx-auto max-md:text-base">
           Helping Personal Brands Transform Content Into Views, Sponsorship Deals & Scalable Downloads
         </p>
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           className="inline-block bg-white text-[#2563eb] px-[45px] py-[17px] rounded-full font-semibold text-[15px] border-2 border-white shadow-[0_4px_14px_rgba(0,0,0,0.15)] transition-all duration-300 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)]"
         >
           Start Today
-        </a>
+        </Link>
       </div>
 
       <div className="relative z-[3] mt-[85px] flex gap-[22px] justify-center max-md:flex-col max-md:items-center max-md:gap-5 max-md:mt-[60px]">

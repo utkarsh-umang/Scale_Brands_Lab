@@ -1,9 +1,10 @@
 import React from 'react';
-import { Menu, X, Rocket } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Rocket, ChevronDown, FileText, Image } from 'lucide-react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = React.useState(false);
   const [isVisible, setIsVisible] = React.useState(true);
   const [lastScrollY, setLastScrollY] = React.useState(0);
   const location = useLocation();
@@ -15,11 +16,10 @@ export default function Header() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
         setIsVisible(false);
-        setIsMenuOpen(false); // Close mobile menu when hiding
+        setIsMenuOpen(false);
+        setIsResourcesOpen(false);
       } else {
-        // Scrolling up
         setIsVisible(true);
       }
 
@@ -30,15 +30,26 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest('.resources-dropdown')) {
+        setIsResourcesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
     setIsMenuOpen(false);
+    setIsResourcesOpen(false);
     if (isHomePage) {
       const element = document.querySelector(path);
       element?.scrollIntoView({ behavior: 'smooth' });
     } else {
       navigate('/');
-      // Wait for navigation to complete then scroll
       setTimeout(() => {
         const element = document.querySelector(path);
         element?.scrollIntoView({ behavior: 'smooth' });
@@ -72,13 +83,51 @@ export default function Header() {
             >
               Home
             </a>
-            <a
-              href="#services"
-              onClick={(e) => handleNavigation(e, '#services')}
-              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
+
+            {/* Resources Dropdown */}
+            <div
+              className="relative resources-dropdown py-2" // Added padding to create a hover bridge
+              onMouseEnter={() => setIsResourcesOpen(true)}
+              onMouseLeave={() => setIsResourcesOpen(false)}
             >
-              Resources
-            </a>
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-full transition-all text-[15px] font-medium max-md:text-sm group ${isResourcesOpen ? 'bg-white/10 text-white' : 'text-white/85 hover:text-white'
+                  }`}
+              >
+                Resources
+                <ChevronDown className={`h-4 w-4 transition-transform duration-500 ${isResourcesOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* Dropdown Menu */}
+              {isResourcesOpen && (
+                <div className="absolute top-[85%] left-0 mt-2 w-64 bg-[#1a1a1a]/95 backdrop-blur-xl rounded-[24px] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden animate-dropdown-lush origin-top-left z-50">
+                  <div className="p-3">
+                    <Link
+                      to="/clips"
+                      onClick={() => setIsResourcesOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        <Image className="h-4 w-4" />
+                      </div>
+                      <span className="text-sm font-medium">Our portfolio</span>
+                    </Link>
+                    <a
+                      href="#audit-report"
+                      onClick={() => setIsResourcesOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                        <FileText className="h-4 w-4" />
+                      </div>
+                      <span className="text-sm font-medium">Audit report</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <a
               href="#faq"
               onClick={(e) => handleNavigation(e, '#faq')}
@@ -120,32 +169,48 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden pt-4 pb-2">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-2">
               <a
                 href="#home"
                 onClick={(e) => handleNavigation(e, '#home')}
-                className="text-white/85 hover:text-white transition-colors py-2"
+                className="text-white/85 hover:text-white transition-colors py-3 px-4 rounded-xl hover:bg-white/5"
               >
                 Home
               </a>
-              <a
-                href="#services"
-                onClick={(e) => handleNavigation(e, '#services')}
-                className="text-white/85 hover:text-white transition-colors py-2"
-              >
-                Services
-              </a>
+
+              {/* Mobile Resources Accordion */}
+              <div className="px-4 py-2">
+                <div className="text-xs font-bold text-white/40 uppercase tracking-widest mb-2">Resources</div>
+                <div className="grid grid-cols-1 gap-1">
+                  <Link
+                    to="/clips"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 py-3 text-white/85 hover:text-white"
+                  >
+                    <Image className="h-4 w-4 text-blue-400" />
+                    Our portfolio
+                  </Link>
+                  <a
+                    href="#audit-report"
+                    className="flex items-center gap-3 py-3 text-white/85 hover:text-white"
+                  >
+                    <FileText className="h-4 w-4 text-orange-400" />
+                    Audit report
+                  </a>
+                </div>
+              </div>
+
               <a
                 href="#faq"
                 onClick={(e) => handleNavigation(e, '#faq')}
-                className="text-white/85 hover:text-white transition-colors py-2"
+                className="text-white/85 hover:text-white transition-colors py-3 px-4 rounded-xl hover:bg-white/5"
               >
                 FAQ
               </a>
               <a
                 href="/contact"
                 onClick={handleContactClick}
-                className="bg-transparent text-white px-4 py-2 rounded-full border-[1.5px] border-white/30 hover:bg-white hover:text-[#1a1a1a] transition-all text-center"
+                className="mt-4 bg-white text-[#1a1a1a] px-4 py-3 rounded-full font-bold transition-all text-center"
               >
                 Start Today
               </a>

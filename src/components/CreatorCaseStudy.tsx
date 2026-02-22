@@ -73,33 +73,45 @@ export default function CreatorCaseStudy() {
     return (
         <div className="min-h-screen bg-white">
             {/* Header Space for Navbar */}
-            <div className="h-24 md:h-32" />
+            <div className="h-16 md:h-20" />
 
-            <main className="container mx-auto px-4 py-12">
-                <Link to="/" className="inline-flex items-center text-blue-600 font-bold mb-12 hover:translate-x-[-4px] transition-transform">
-                    <ArrowLeft className="mr-2" /> Back to Creators
-                </Link>
-
-                {/* Creator Info Header */}
-                <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
-                    <div className="w-full md:w-1/3 max-w-[400px]">
-                        <div className="rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white ring-1 ring-gray-100">
-                            <img src={creator.image} alt={creator.name} className="w-full h-full object-cover aspect-[4/5]" />
-                        </div>
+            <main className="container mx-auto px-4 py-4">
+                <div className="relative mb-20">
+                    {/* Back Button - Positioned to align with top of image */}
+                    <div className="absolute top-2 right-0 hidden md:block">
+                        <Link to="/" className="inline-flex items-center text-blue-600 font-bold hover:translate-x-[-4px] transition-transform">
+                            <ArrowLeft className="mr-2" /> Back to Creators
+                        </Link>
                     </div>
-                    <div className="w-full md:w-2/3">
-                        <h1 className="text-5xl md:text-7xl font-black text-[#1a1a1a] mb-4 tracking-tighter uppercase">
-                            {creator.name}
-                        </h1>
-                        <div className="flex items-center gap-4 mb-8">
-                            <span className="text-blue-600 font-bold text-xl">{creator.handle}</span>
-                            <span className="bg-blue-50 text-blue-600 px-4 py-1 rounded-full font-bold text-sm">
-                                {creator.followers}
-                            </span>
+
+                    {/* Mobile Back Button */}
+                    <div className="md:hidden mb-8">
+                        <Link to="/" className="inline-flex items-center text-blue-600 font-bold hover:translate-x-[-4px] transition-transform">
+                            <ArrowLeft className="mr-2" /> Back to Creators
+                        </Link>
+                    </div>
+
+                    {/* Creator Info Header */}
+                    <div className="flex flex-col md:flex-row gap-12 items-start">
+                        <div className="w-full md:w-1/3 max-w-[400px]">
+                            <div className="rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white ring-1 ring-gray-100">
+                                <img src={creator.image} alt={creator.name} className="w-full h-full object-cover aspect-[4/5]" />
+                            </div>
                         </div>
-                        <p className="text-2xl text-gray-600 font-medium leading-relaxed max-w-2xl">
-                            {creator.description}
-                        </p>
+                        <div className="w-full md:w-2/3">
+                            <h1 className="text-5xl md:text-7xl font-black text-[#1a1a1a] mb-4 tracking-tighter uppercase">
+                                {creator.name}
+                            </h1>
+                            <div className="flex items-center gap-4 mb-8">
+                                <span className="text-blue-600 font-bold text-xl">{creator.handle}</span>
+                                <span className="bg-blue-50 text-blue-600 px-4 py-1 rounded-full font-bold text-sm">
+                                    {creator.followers}
+                                </span>
+                            </div>
+                            <p className="text-2xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+                                {creator.description}
+                            </p>
+                        </div>
                     </div>
                 </div>
 

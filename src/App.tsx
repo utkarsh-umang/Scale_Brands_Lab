@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import BeforeAfter from './components/BeforeAfter';
+import WhyUs from './components/WhyUs';
 import FAQ from './components/FAQ';
 import CreatorCaseStudy from './components/CreatorCaseStudy';
 import Watch from './components/Watch';
@@ -15,6 +16,7 @@ import RefundPolicy from './components/RefundPolicy';
 import Footer from './components/Footer';
 import SimplePayUButton from './components/PayuPayment';
 import Clips from './components/Clips';
+import ScrollToTop from './components/ScrollToTop';
 
 function HomePage() {
   return (
@@ -22,6 +24,7 @@ function HomePage() {
       <main>
         <Hero />
         <BeforeAfter />
+        <WhyUs />
         <Services />
         <FAQ />
       </main>
@@ -56,6 +59,7 @@ function AppContent() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AppContent />
     </BrowserRouter>
   );
