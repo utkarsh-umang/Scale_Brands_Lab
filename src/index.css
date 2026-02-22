@@ -144,6 +144,6 @@ body {
 
 /* Ensure Swiper container doesn't cut off shadows */
 .mySwiper {
-  padding-bottom: 80px !important;
+  padding-bottom: 40px;
   overflow: visible !important;
 }

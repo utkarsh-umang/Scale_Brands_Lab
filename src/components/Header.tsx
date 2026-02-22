@@ -62,9 +62,9 @@ export default function Header() {
         }`}
     >
       <nav className="px-[60px] py-5 max-md:px-8 max-md:py-4">
-        <div className="flex items-center justify-between max-md:flex-wrap">
+        <div className="flex items-center justify-between">
           {/* Left Navigation */}
-          <div className="flex gap-[35px] items-center flex-1 max-md:flex-none max-md:order-2 max-md:w-full max-md:justify-center max-md:mt-4 max-md:gap-5">
+          <div className="hidden md:flex gap-[35px] items-center flex-1">
             <a
               href="#home"
               onClick={(e) => handleNavigation(e, '#home')}
@@ -73,24 +73,24 @@ export default function Header() {
               Home
             </a>
             <a
-              href="#results"
-              onClick={(e) => handleNavigation(e, '#results')}
-              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
-            >
-              Our Work
-            </a>
-            <a
               href="#services"
               onClick={(e) => handleNavigation(e, '#services')}
               className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
             >
               Resources
             </a>
+            <a
+              href="#faq"
+              onClick={(e) => handleNavigation(e, '#faq')}
+              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
+            >
+              FAQ
+            </a>
           </div>
 
           {/* Center Logo */}
           <div
-            className="absolute left-1/2 -translate-x-1/2 cursor-pointer max-md:relative max-md:left-auto max-md:transform-none max-md:order-1 flex items-center gap-2"
+            className="flex items-center gap-2 cursor-pointer md:absolute md:left-1/2 md:-translate-x-1/2"
             onClick={handleLogoClick}
           >
             <Rocket className="h-6 w-6" />
@@ -98,7 +98,7 @@ export default function Header() {
           </div>
 
           {/* Right CTA */}
-          <div className="flex-1 flex justify-end max-md:flex-none max-md:order-3 max-md:mt-4">
+          <div className="hidden md:flex flex-1 justify-end">
             <a
               href="/contact"
               onClick={handleContactClick}
@@ -110,10 +110,10 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden absolute right-8 top-5"
+            className="md:hidden flex items-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </button>
         </div>
 
@@ -134,13 +134,6 @@ export default function Header() {
                 className="text-white/85 hover:text-white transition-colors py-2"
               >
                 Services
-              </a>
-              <a
-                href="#results"
-                onClick={(e) => handleNavigation(e, '#results')}
-                className="text-white/85 hover:text-white transition-colors py-2"
-              >
-                Results
               </a>
               <a
                 href="#faq"

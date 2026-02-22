@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -39,15 +39,15 @@ export default function Hero() {
         </div>
 
         {/* X (Twitter) */}
-        <div className="absolute top-[40%] left-[8%] w-[85px] h-[85px] rounded-3xl glass-icon shadow-[0_8px_32px_rgba(31,38,135,0.15)] flex items-center justify-center transition-all duration-400 max-lg:w-[70px] max-lg:h-[70px] max-md:hidden">
-          <svg className="w-10 h-10 max-lg:w-8 max-lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute top-[40%] left-[8%] w-[85px] h-[85px] rounded-3xl glass-icon shadow-[0_8px_32px_rgba(31,38,135,0.15)] flex items-center justify-center transition-all duration-400 max-lg:w-[70px] max-lg:h-[70px] max-md:w-[60px] max-md:h-[60px] max-md:top-[38%] max-md:left-[4%]">
+          <svg className="w-10 h-10 max-lg:w-8 max-lg:h-8 max-md:w-[26px] max-md:h-[26px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#000000" />
           </svg>
         </div>
 
         {/* Facebook */}
-        <div className="absolute top-[40%] right-[8%] w-[85px] h-[85px] rounded-3xl glass-icon shadow-[0_8px_32px_rgba(31,38,135,0.15)] flex items-center justify-center transition-all duration-400 max-lg:w-[70px] max-lg:h-[70px] max-md:hidden">
-          <svg className="w-10 h-10 max-lg:w-8 max-lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute top-[40%] right-[8%] w-[85px] h-[85px] rounded-3xl glass-icon shadow-[0_8px_32px_rgba(31,38,135,0.15)] flex items-center justify-center transition-all duration-400 max-lg:w-[70px] max-lg:h-[70px] max-md:w-[60px] max-md:h-[60px] max-md:top-[38%] max-md:right-[4%]">
+          <svg className="w-10 h-10 max-lg:w-8 max-lg:h-8 max-md:w-[26px] max-md:h-[26px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2" />
           </svg>
         </div>
@@ -72,7 +72,7 @@ export default function Hero() {
 
       <div className="relative z-[3] mt-[85px] flex gap-[22px] justify-center max-md:flex-col max-md:items-center max-md:gap-5 max-md:mt-[60px]">
         {/* Card 1 - Katie Melissa */}
-        <div className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-2 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] group">
+        <Link to="/case-study/katie-melissa" className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-2 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] group block">
           <div className="absolute inset-0 bg-gray-200 rounded-[30px] overflow-hidden transform-gpu [mask-image:linear-gradient(white,white)]">
             <img
               src="https://scale-brands.s3.ap-south-1.amazonaws.com/katie_melissa.jpg"
@@ -85,10 +85,10 @@ export default function Hero() {
             <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">240k+ Followers</div>
           </div>
           <div className="absolute inset-0 rounded-[35px] border-[5px] border-white pointer-events-none z-20" />
-        </div>
+        </Link>
 
         {/* Card 2 - Mind Hustler */}
-        <div className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) rotate-2 translate-y-5 hover:rotate-0 hover:translate-y-3 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] max-md:translate-y-0 group">
+        <Link to="/case-study/mind-hustler" className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) rotate-2 translate-y-5 hover:rotate-0 hover:translate-y-3 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] max-md:translate-y-0 group block">
           <div className="absolute inset-0 bg-gray-200 rounded-[30px] overflow-hidden transform-gpu [mask-image:linear-gradient(white,white)]">
             <img
               src="https://scale-brands.s3.ap-south-1.amazonaws.com/mind_hustler.jpg"
@@ -101,10 +101,10 @@ export default function Hero() {
             <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">350k+ Followers</div>
           </div>
           <div className="absolute inset-0 rounded-[35px] border-[5px] border-white pointer-events-none z-20" />
-        </div>
+        </Link>
 
         {/* Card 3 - Nutty Productions */}
-        <div className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-1 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] group">
+        <Link to="/case-study/nutty-productions" className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-1 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] group block">
           <div className="absolute inset-0 bg-gray-200 rounded-[30px] overflow-hidden transform-gpu [mask-image:linear-gradient(white,white)]">
             <img
               src="https://scale-brands.s3.ap-south-1.amazonaws.com/nutty_productions.jpg"
@@ -117,7 +117,7 @@ export default function Hero() {
             <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">600k+ Subs</div>
           </div>
           <div className="absolute inset-0 rounded-[35px] border-[5px] border-white pointer-events-none z-20" />
-        </div>
+        </Link>
       </div>
     </section>
   );

@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Results from './components/Results';
+import BeforeAfter from './components/BeforeAfter';
 import FAQ from './components/FAQ';
+import CreatorCaseStudy from './components/CreatorCaseStudy';
 import Watch from './components/Watch';
 import QuickOverview from './components/QuickOverview';
 import ClaimVideo from './components/ClaimVideo';
@@ -20,8 +21,8 @@ function HomePage() {
     <>
       <main>
         <Hero />
+        <BeforeAfter />
         <Services />
-        <Results />
         <FAQ />
       </main>
       <Footer />
@@ -45,6 +46,7 @@ function AppContent() {
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/pay" element={<SimplePayUButton />} />
           <Route path="/clips" element={<Clips />} />
+          <Route path="/case-study/:creatorId" element={<CreatorCaseStudy />} />
         </Routes>
       </div>
     </>
