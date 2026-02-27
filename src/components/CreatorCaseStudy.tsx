@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Play, Download, TrendingUp, Users } from 'lucide-react';
+import { Play, Download, TrendingUp, Users } from 'lucide-react';
+import Footer from './Footer';
 
 const caseStudiesData = {
     'katie-melissa': {
@@ -75,68 +76,58 @@ export default function CreatorCaseStudy() {
             {/* Header Space for Navbar */}
             <div className="h-16 md:h-20" />
 
-            <main className="container mx-auto px-4 py-4">
+            <main className="container mx-auto px-4 pt-12 pb-4">
                 <div className="relative mb-20">
-                    {/* Back Button - Positioned to align with top of image */}
-                    <div className="absolute top-2 right-0 hidden md:block">
-                        <Link to="/" className="inline-flex items-center text-blue-600 font-bold hover:translate-x-[-4px] transition-transform">
-                            <ArrowLeft className="mr-2" /> Back to Creators
-                        </Link>
-                    </div>
-
-                    {/* Mobile Back Button */}
-                    <div className="md:hidden mb-8">
-                        <Link to="/" className="inline-flex items-center text-blue-600 font-bold hover:translate-x-[-4px] transition-transform">
-                            <ArrowLeft className="mr-2" /> Back to Creators
-                        </Link>
-                    </div>
-
                     {/* Creator Info Header */}
-                    <div className="flex flex-col md:flex-row gap-12 items-start">
-                        <div className="w-full md:w-1/3 max-w-[400px]">
-                            <div className="rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white ring-1 ring-gray-100">
+                    <div className="flex flex-col md:flex-row gap-8 items-stretch">
+                        <div className="w-full md:w-1/4 max-w-[280px]">
+                            <div className="rounded-[30px] overflow-hidden shadow-xl border-[6px] border-white ring-1 ring-gray-100 h-full">
                                 <img src={creator.image} alt={creator.name} className="w-full h-full object-cover aspect-[4/5]" />
                             </div>
                         </div>
-                        <div className="w-full md:w-2/3">
-                            <h1 className="text-5xl md:text-7xl font-black text-[#1a1a1a] mb-4 tracking-tighter uppercase">
-                                {creator.name}
-                            </h1>
-                            <div className="flex items-center gap-4 mb-8">
-                                <span className="text-blue-600 font-bold text-xl">{creator.handle}</span>
-                                <span className="bg-blue-50 text-blue-600 px-4 py-1 rounded-full font-bold text-sm">
-                                    {creator.followers}
-                                </span>
+                        <div className="w-full md:w-3/4 flex flex-col justify-between py-2">
+                            <div>
+                                <h1 className="text-3xl md:text-5xl font-black text-[#1a1a1a] mb-3 tracking-tighter uppercase">
+                                    {creator.name}
+                                </h1>
+                                <div className="flex items-center gap-3 mb-6">
+                                    <span className="text-blue-600 font-bold text-base">{creator.handle}</span>
+                                    <span className="bg-blue-50 text-blue-600 px-3 py-0.5 rounded-full font-bold text-xs">
+                                        {creator.followers}
+                                    </span>
+                                </div>
+                                <p className="text-lg text-gray-600 font-medium leading-relaxed max-w-2xl mb-6">
+                                    {creator.description}
+                                </p>
                             </div>
-                            <p className="text-2xl text-gray-600 font-medium leading-relaxed max-w-2xl">
-                                {creator.description}
-                            </p>
+
+                            {/* Stats as tags parallel to the bottom of the image */}
+                            <div className="flex flex-wrap gap-3 mt-auto">
+                                {creator.stats.map((stat, index) => (
+                                    <div key={index} className="flex items-center gap-3 bg-gray-50 px-4 py-2.5 rounded-2xl border border-gray-100 hover:bg-white hover:shadow-md transition-all duration-300">
+                                        <div className="w-8 h-8 bg-blue-600 rounded-xl flex items-center justify-center text-white shrink-0">
+                                            <stat.icon className="w-4 h-4" />
+                                        </div>
+                                        <div className="flex flex-col justify-center">
+                                            <div className="text-lg font-black text-[#1a1a1a] leading-tight">{stat.value}</div>
+                                            <div className="text-gray-500 font-bold uppercase text-[9px] tracking-widest">{stat.label}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-                    {creator.stats.map((stat, index) => (
-                        <div key={index} className="bg-gray-50 p-8 rounded-[30px] border border-gray-100 text-center group hover:bg-white hover:shadow-xl transition-all duration-300">
-                            <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform">
-                                <stat.icon />
-                            </div>
-                            <div className="text-3xl font-black text-[#1a1a1a] mb-2">{stat.value}</div>
-                            <div className="text-gray-500 font-bold uppercase text-xs tracking-widest">{stat.label}</div>
-                        </div>
-                    ))}
-                </div>
-
                 {/* Video Results */}
-                <div className="mb-20">
-                    <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-12 text-center uppercase tracking-tight">
+                <div className="mb-16">
+                    <h2 className="text-3xl md:text-5xl font-black text-[#1a1a1a] mb-8 text-center uppercase tracking-tight">
                         The Viral <span className="text-blue-600">Assets</span>
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div className="flex flex-wrap justify-center gap-8 md:gap-16 max-w-4xl mx-auto">
                         {creator.videoResults.map((video) => (
-                            <div key={video.id} className="group">
-                                <div className="relative aspect-[9/16] bg-black rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white ring-1 ring-gray-100 group-hover:scale-[1.02] transition-transform duration-500">
+                            <div key={video.id} className="group w-full max-w-[260px]">
+                                <div className="relative aspect-[9/16] bg-black rounded-[30px] overflow-hidden shadow-2xl border-[6px] border-white ring-1 ring-gray-100 group-hover:scale-[1.02] transition-transform duration-500">
                                     <video
                                         className="w-full h-full object-cover"
                                         controls
@@ -145,7 +136,7 @@ export default function CreatorCaseStudy() {
                                         <source src={video.url} type="video/mp4" />
                                     </video>
                                 </div>
-                                <div className="mt-6 text-center">
+                                <div className="mt-4 text-center">
                                     <h3 className="text-xl font-bold text-[#1a1a1a]">{video.title}</h3>
                                 </div>
                             </div>
@@ -166,6 +157,7 @@ export default function CreatorCaseStudy() {
                     </div>
                 </div>
             </main>
+            <Footer />
         </div>
     );
 }

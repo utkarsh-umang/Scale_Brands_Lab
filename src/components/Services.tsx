@@ -19,14 +19,22 @@ const videos = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white overflow-hidden">
+    <section id="services" className="relative bg-white overflow-hidden py-10 md:py-16">
+      {/* Blue Gradient Background - Blob Effect */}
+      <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[550px] bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#2563eb] opacity-20 blur-[100px] rounded-[100%] z-[0] pointer-events-none" />
+
+      {/* Floating Blur Blobs for Depth */}
+      <div className="absolute top-[10%] left-[10%] w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow z-[0] pointer-events-none" />
+      <div className="absolute top-[20%] right-[10%] w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-medium animation-delay-2000 z-[0] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[20%] w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-fast animation-delay-4000 z-[0] pointer-events-none" />
+
       {/* Why do our edits perform? Header */}
-      <div className="container mx-auto px-4 pt-2 md:pt-4 mb-1 md:mb-2">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1 md:mb-2 tracking-tight leading-tight">
-            Why do our edits perform?
+      <div className="container relative z-10 mx-auto px-4 pt-2 md:pt-4 mb-1 md:mb-2">
+        <div className="text-center mb-8">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tighter leading-[1.1]">
+            Why do our edits <span className="text-blue-600">perform?</span>
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-medium px-4">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed px-4">
             Our clips get 5x more engagement than the average reel posted.
           </p>
         </div>
@@ -34,18 +42,7 @@ export default function Services() {
 
       {/* Full Width Video Section */}
       <div className="relative w-full mb-2 md:mb-4">
-        {/* Gradient Background - Curvy Line */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 pointer-events-none overflow-visible">
-          {/* High-Opacity Core Gradient */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[500px] md:h-[600px] bg-[radial-gradient(circle,rgba(37,99,235,0.18)_0%,rgba(96,165,250,0.12)_45%,transparent_70%)] blur-[60px]" />
-
-          {/* Vibrant High-Density Blobs */}
-          <div className="absolute top-1/2 left-[15%] -translate-y-1/2 w-[35%] h-[50%] bg-blue-500/25 rounded-full blur-[120px] animate-float-slow" />
-          <div className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[35%] h-[50%] bg-blue-400/25 rounded-full blur-[120px] animate-float-medium" />
-
-          {/* Atmospheric Accent */}
-          <div className="absolute top-[60%] left-1/2 -translate-x-1/2 w-[60%] h-[30%] bg-blue-300/20 rounded-full blur-[100px] animate-pulse" />
-        </div>
+        {/* Background Gradients removed, now handled by section level */}
 
         {/* Videos Container */}
         <div className="container mx-auto px-4 relative z-10 group/swiper">

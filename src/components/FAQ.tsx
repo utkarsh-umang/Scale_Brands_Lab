@@ -181,17 +181,6 @@ export default function FAQ() {
             })}
           </div>
         </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-20 text-center">
-          <p className="text-gray-500 mb-6 font-medium">Still have questions?</p>
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center px-10 py-4 bg-blue-600 text-white rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 transition-all hover:scale-105"
-          >
-            Contact our team
-          </a>
-        </div>
       </div>
     </section>
   );

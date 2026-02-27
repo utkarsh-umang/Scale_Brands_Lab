@@ -161,7 +161,7 @@ export default function ContactPage() {
 
           <div className="relative z-10 flex flex-col gap-0">
             {[
-              { id: '01', icon: '🔍', title: 'Discovery Call', desc: 'We start with a focused session to understand your goals, users, and constraints — no templates, just listening.', badge: '~1 hour' },
+              { id: '01', icon: '🔍', title: 'Discovery Call', desc: 'We start with a focused session to understand your goals, users, and constraints — no templates, just listening.', badge: '15 mins' },
               { id: '02', icon: '🧩', title: 'Strategy & Planning', desc: 'We map out the scope, timelines, and deliverables in a shared roadmap you can track in real time.', badge: '3–5 days' },
               { id: '03', icon: '⚡', title: 'Design & Build', desc: "Iterative sprints with regular check-ins so you're always in the loop — no black-box surprises.", badge: '2–6 weeks' },
               { id: '04', icon: '🚀', title: 'Launch & Support', desc: 'We handle deployment, QA, and stay on hand for 30 days post-launch to make sure everything holds.', badge: 'Ongoing' },

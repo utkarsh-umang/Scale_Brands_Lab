@@ -18,6 +18,14 @@ export default function Clips() {
       <main>
         {/* Hero Section of Clips Page */}
         <section className="relative pt-24 pb-24 md:pt-[150px] md:pb-36 overflow-hidden border-b border-gray-100 bg-white">
+          {/* Blue Gradient Background - Blob Effect */}
+          <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[550px] bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#2563eb] opacity-20 blur-[100px] rounded-[100%] z-[1] pointer-events-none" />
+
+          {/* Floating Blur Blobs for Depth */}
+          <div className="absolute top-[10%] left-[10%] w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow z-[1] pointer-events-none" />
+          <div className="absolute top-[20%] right-[10%] w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-medium animation-delay-2000 z-[1] pointer-events-none" />
+          <div className="absolute bottom-[20%] left-[20%] w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-fast animation-delay-4000 z-[1] pointer-events-none" />
+
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h1 className="text-5xl md:text-[85px] font-black text-[#1a1a1a] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
               You've <span className="text-blue-600">already</span> seen our work on your feed.
@@ -44,12 +52,12 @@ export default function Clips() {
         <div id="video-grid" />
 
         {/* Video Grid Section */}
-        <section className="bg-white py-24 border-t border-gray-100">
+        <section className="bg-gray-50 py-24 border-t border-gray-100">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {videos.map((video) => (
                 <div key={video.id} className="group">
-                  <div className="relative aspect-[9/16] bg-black rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white ring-1 ring-gray-100 group-hover:scale-[1.03] transition-all duration-500">
+                  <div className="relative aspect-[9/16] bg-black rounded-[40px] overflow-hidden shadow-xl border-[8px] border-white ring-1 ring-gray-200 group-hover:scale-[1.03] transition-all duration-500">
                     <video
                       className="w-full h-full object-cover"
                       controls
