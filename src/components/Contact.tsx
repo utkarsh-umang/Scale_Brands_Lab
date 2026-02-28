@@ -137,6 +137,18 @@ export default function ContactPage() {
               Send Message
               <Send className="w-4 h-4" strokeWidth={2.5} />
             </button>
+
+            <div className="flex flex-col items-center gap-2 mt-2">
+              <span className="text-sm text-slate-400 font-medium uppercase tracking-wider">or</span>
+              <a
+                href="https://calendly.com/scale-brands-lab/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#2563eb] font-semibold hover:text-[#1d4ed8] hover:underline transition-colors"
+              >
+                Book the call yourself here
+              </a>
+            </div>
           </form>
         </div>
 

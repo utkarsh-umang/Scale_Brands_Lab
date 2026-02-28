@@ -113,8 +113,8 @@ export default function Header() {
                       </div>
                       <span className="text-sm font-medium">Our portfolio</span>
                     </Link>
-                    <a
-                      href="#audit-report"
+                    <Link
+                      to="/audit-report"
                       onClick={() => setIsResourcesOpen(false)}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
                     >
@@ -122,7 +122,7 @@ export default function Header() {
                         <FileText className="h-4 w-4" />
                       </div>
                       <span className="text-sm font-medium">Audit report</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -190,13 +190,14 @@ export default function Header() {
                     <Image className="h-4 w-4 text-blue-400" />
                     Our portfolio
                   </Link>
-                  <a
-                    href="#audit-report"
+                  <Link
+                    to="/audit-report"
+                    onClick={() => setIsMenuOpen(false)}
                     className="flex items-center gap-3 py-3 text-white/85 hover:text-white"
                   >
                     <FileText className="h-4 w-4 text-orange-400" />
                     Audit report
-                  </a>
+                  </Link>
                 </div>
               </div>
 

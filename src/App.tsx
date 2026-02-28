@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import SimplePayUButton from './components/PayuPayment';
 import Clips from './components/Clips';
 import ScrollToTop from './components/ScrollToTop';
+import PodcastLeadMagnet from './components/PodcastLeadMagnet';
 
 function HomePage() {
   return (
@@ -49,6 +50,7 @@ function AppContent() {
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/pay" element={<SimplePayUButton />} />
           <Route path="/clips" element={<Clips />} />
+          <Route path="/audit-report" element={<div className="bg-white"><PodcastLeadMagnet /><Footer /></div>} />
           <Route path="/case-study/:creatorId" element={<CreatorCaseStudy />} />
         </Routes>
       </div>
