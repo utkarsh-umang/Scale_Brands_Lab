@@ -3,14 +3,30 @@ import Footer from './Footer';
 
 export default function Clips() {
   const videos = [
-    { id: 1, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/1.mp4', title: 'Viral Strategy #1' },
-    { id: 2, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/2.mp4', title: 'Engagement Hook' },
-    { id: 3, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/3.mp4', title: 'Cinematic Storytelling' },
-    { id: 4, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/4.mp4', title: 'Retention Edit' },
-    { id: 5, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/5.mp4', title: 'Growth Series' },
-    { id: 6, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/6.mp4', title: 'Viral Asset #2' },
-    { id: 7, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/7.mp4', title: 'Creative Hook' },
-    { id: 8, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/8.mp4', title: 'Viral Delivery' },
+    { id: 1, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/1.mp4' },
+    { id: 2, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/2.mp4' },
+    { id: 3, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/3.mp4' },
+    { id: 4, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/4.mp4' },
+    { id: 5, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/5.mp4' },
+    { id: 6, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/6.mp4' },
+    { id: 7, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/7.mp4' },
+    { id: 8, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/8.mp4' },
+    { id: 9, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/9.mp4' },
+    { id: 10, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/10.mp4' },
+    { id: 11, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/11.mp4' },
+    { id: 12, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/12.mp4' },
+    { id: 13, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/13.mp4' },
+    { id: 14, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/14.mp4' },
+    { id: 15, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/15.mp4' },
+    { id: 16, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/16.mp4' },
+    { id: 17, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/17.mp4' },
+    { id: 18, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/18.mp4' },
+    { id: 19, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/19.mp4' },
+    { id: 20, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/20.mp4' },
+    { id: 21, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/21.mp4' },
+    { id: 22, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/22.mp4' },
+    { id: 23, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/23.mp4' },
+    { id: 24, url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/24.mp4' },
   ];
 
   return (
