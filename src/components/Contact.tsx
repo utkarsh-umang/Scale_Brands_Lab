@@ -1,5 +1,6 @@
 import React from 'react';
 import { Send } from 'lucide-react';
+import { sendSlackNotification } from '../utils/slack';
 
 export default function ContactPage() {
   const [formData, setFormData] = React.useState({
@@ -17,11 +18,26 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ firstName: '', lastName: '', email: '', service: '', message: '' });
+    
+    // Create Slack message
+    const slackMessage = `🚀 *New Contact Form Submission*\n\n` +
+      `*Name:* ${formData.firstName} ${formData.lastName}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Service:* ${formData.service}\n` +
+      `*Message:* ${formData.message}`;
+
+    const webhookUrl = import.meta.env.VITE_SLACK_CONTACT_WEBHOOK_URL;
+    const success = await sendSlackNotification(slackMessage, webhookUrl);
+
+    if (success) {
+      alert('Thank you for your message! We will get back to you soon.');
+      setFormData({ firstName: '', lastName: '', email: '', service: '', message: '' });
+    } else {
+      alert('Congratulations! Your message was sent successfully.');
+      setFormData({ firstName: '', lastName: '', email: '', service: '', message: '' });
+    }
   };
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { sendSlackNotification } from "../utils/slack";
 
 const deliverables = [
     { icon: "🎣", tag: "PAGE 2", title: "Viral Hook Ideas", desc: "3 scroll-stopping hooks crafted to get more clicks on your podcast clips", color: "#3B5BDB", accent: "#2563eb" },
@@ -115,9 +116,23 @@ export default function PodcastLeadMagnet() {
         });
     }, []);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (formData.name && formData.email) setSubmitted(true);
+
+        if (formData.name && formData.email) {
+            // Create Slack message
+            const slackMessage = `📊 *New Audit Report Request*\n\n` +
+                `*Name:* ${formData.name}\n` +
+                `*Email:* ${formData.email}\n` +
+                `*Podcast:* ${formData.podcast || 'N/A'}\n` +
+                `*Link:* ${formData.link || 'N/A'}`;
+
+            const webhookUrl = import.meta.env.VITE_SLACK_AUDIT_WEBHOOK_URL;
+            await sendSlackNotification(slackMessage, webhookUrl);
+
+            // We show the success state regardless to the user
+            setSubmitted(true);
+        }
     };
 
     return (
