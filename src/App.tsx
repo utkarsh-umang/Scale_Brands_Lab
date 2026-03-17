@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Results from './components/Results';
+import BeforeAfter from './components/BeforeAfter';
+import WhyUs from './components/WhyUs';
 import FAQ from './components/FAQ';
+import CreatorCaseStudy from './components/CreatorCaseStudy';
 import Watch from './components/Watch';
 import QuickOverview from './components/QuickOverview';
 import ClaimVideo from './components/ClaimVideo';
@@ -14,14 +16,17 @@ import RefundPolicy from './components/RefundPolicy';
 import Footer from './components/Footer';
 import SimplePayUButton from './components/PayuPayment';
 import Clips from './components/Clips';
+import ScrollToTop from './components/ScrollToTop';
+import PodcastLeadMagnet from './components/PodcastLeadMagnet';
 
 function HomePage() {
   return (
     <>
       <main>
         <Hero />
+        <BeforeAfter />
+        <WhyUs />
         <Services />
-        <Results />
         <FAQ />
       </main>
       <Footer />
@@ -45,6 +50,8 @@ function AppContent() {
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/pay" element={<SimplePayUButton />} />
           <Route path="/clips" element={<Clips />} />
+          <Route path="/audit-report" element={<div className="bg-white"><PodcastLeadMagnet /><Footer /></div>} />
+          <Route path="/case-study/:creatorId" element={<CreatorCaseStudy />} />
         </Routes>
       </div>
     </>
@@ -54,6 +61,7 @@ function AppContent() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AppContent />
     </BrowserRouter>
   );

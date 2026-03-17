@@ -1,20 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-gray-900;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fff;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(-20px); }
-  10% { opacity: 1; transform: translateY(0); }
-  90% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 .animate-fade-in-out {
@@ -22,9 +49,12 @@ body {
 }
 
 @keyframes gradientShift {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -33,4 +63,129 @@ body {
 .animate-gradient-shift {
   animation: gradientShift 15s ease infinite;
   background-size: 200% 200%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.glass-icon {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Custom Swiper Navigation Styles */
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-swiper-button-next svg,
+.custom-swiper-button-prev svg {
+  transition: transform 0.3s ease;
+}
+
+.custom-swiper-button-next:hover svg {
+  transform: translateX(3px);
+}
+
+.custom-swiper-button-prev:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Swiper Pagination Customization */
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background: rgba(30, 64, 175, 0.2) !important;
+  opacity: 1 !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1e40af !important;
+  width: 28px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 10px rgba(30, 64, 175, 0.3);
+}
+
+@keyframes dropdownReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.95);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-dropdown-lush {
+  animation: dropdownReveal 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Ensure Swiper container doesn't cut off shadows */
+.mySwiper {
+  padding-bottom: 40px;
+  overflow: visible !important;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-dm-sans {
+  font-family: 'DM Sans', sans-serif;
 }

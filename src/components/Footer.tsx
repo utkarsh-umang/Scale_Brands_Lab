@@ -2,11 +2,11 @@ import { Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-[#1a1a1a] text-gray-300">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          
+
           {/* Company Info */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">ScaleBrandsLab</h3>
@@ -31,7 +31,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
               <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#results" className="text-gray-400 hover:text-white transition-colors">Results</a></li>
+              <li><a href="/clips" className="text-gray-400 hover:text-white transition-colors">Results</a></li>
               <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
               <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
             </ul>
