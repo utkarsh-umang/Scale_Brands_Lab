@@ -61,17 +61,10 @@ export default function ContactPage() {
           }}
         />
 
-        <div className="max-w-[1100px] mx-auto relative z-10 bg-white border border-slate-200 rounded-[24px] overflow-hidden grid md:grid-cols-2 shadow-xl shadow-slate-200/50">
+        <div className="max-w-[1280px] w-full mx-auto mt-8 md:mt-12 relative z-10 bg-white border border-slate-200 rounded-[24px] overflow-hidden grid md:grid-cols-2 shadow-xl shadow-slate-200/50">
 
           {/* LEFT: Contact Form */}
           <div className="bg-white p-8 md:p-14 flex flex-col gap-8">
-            <div>
-              <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.15em] uppercase text-[#2563eb] px-3.5 py-1.5 border border-[#2563eb]/20 rounded-full bg-blue-50">
-                <span className="w-1.5 h-1.5 bg-[#2563eb] rounded-full shadow-[0_0_8px_#2563eb]" />
-                Get In Touch
-              </span>
-            </div>
-
             <div>
               <h1 className="text-[clamp(2rem,3vw,2.6rem)] font-extrabold leading-[1.1] tracking-tight text-slate-900 mb-2">
                 Let's build<br />something <span className="text-[#2563eb]">great.</span>
@@ -180,15 +173,9 @@ export default function ContactPage() {
             />
 
             <div className="relative z-10 flex flex-col gap-2">
-              <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.15em] uppercase text-[#2563eb] px-3.5 py-1.5 border border-[#2563eb]/10 rounded-full w-fit bg-blue-100/50">
-                Our Process
-              </span>
               <h2 className="text-[clamp(1.5rem,2.2vw,1.9rem)] font-extrabold text-slate-900 leading-tight">
-                How we work<br />with you
+                How we work with you
               </h2>
-              <p className="text-sm text-slate-600 leading-relaxed max-w-[320px]">
-                From first hello to final launch — a clear, collaborative process at every step.
-              </p>
             </div>
 
             <div className="relative z-10 flex flex-col gap-0">
