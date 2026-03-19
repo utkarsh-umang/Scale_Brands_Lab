@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -50,6 +50,16 @@ export default function Footer() {
                   team@scalebrandslab.com
                 </a>
               </div>
+              <a
+                href="https://www.linkedin.com/company/scale-brands-lab/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="ScaleBrandsLab on LinkedIn"
+                className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm"
+              >
+                <Linkedin className="h-4 w-4 text-[#2563eb]" />
+                LinkedIn
+              </a>
               <a
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400 transition-colors"
