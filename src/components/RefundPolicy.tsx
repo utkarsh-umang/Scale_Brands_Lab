@@ -1,28 +1,21 @@
+import Footer from './Footer';
+
 export default function RefundPolicy() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">Refund Policy</h1>
-          
-          <div className="space-y-8 text-gray-700">
-            <div>
-              <p className="mb-4">
-                <strong>Effective Date:</strong> {new Date().toLocaleDateString()}
-              </p>
-              <p className="mb-4">
-                <strong>Business Name:</strong> ScaleBrandsLab<br />
-                <strong>Proprietor:</strong> UTKARSH KUMAR<br />
-                <strong>Address:</strong> 245 Pocket 1 DDA SFS Flat, South West Delhi, Dwarka Sec-6, Sector 5 Dwarka, Dwarka Sec-6, Delhi, India - 110075
-              </p>
-            </div>
+    <>
+      <div className="min-h-screen bg-gray-50 pt-16">
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">Refund Policy</h1>
+            
+            <div className="space-y-8 text-gray-700">
 
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. General Refund Policy</h2>
-              <p className="mb-4">
-                At ScaleBrandsLab, we are committed to providing high-quality social media marketing services. Due to the nature of our digital services and the immediate access to our strategies and content, we maintain a strict no-refund policy once the onboarding process has begun and services have been initiated.
-              </p>
-            </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. General Refund Policy</h2>
+                <p className="mb-4">
+                  At ScaleBrandsLab, we are committed to providing high-quality social media marketing services. Due to the nature of our digital services and the immediate access to our strategies and content, we maintain a strict no-refund policy once the onboarding process has begun and services have been initiated.
+                </p>
+              </div>
 
             <div>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Service Cancellation</h2>
@@ -106,9 +99,8 @@ export default function RefundPolicy() {
                 For any questions regarding refunds or to submit a refund request under exceptional circumstances, please contact us at:
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p><strong>Email:</strong> growth@scalebrandslab.com</p>
+                <p><strong>Email:</strong> team@scalebrandslab.com</p>
                 <p><strong>Subject Line:</strong> Refund Request - [Your Name]</p>
-                <p><strong>Address:</strong> 245 Pocket 1 DDA SFS Flat, South West Delhi, Dwarka Sec-6, Sector 5 Dwarka, Dwarka Sec-6, Delhi, India - 110075</p>
               </div>
             </div>
 
@@ -118,9 +110,11 @@ export default function RefundPolicy() {
                 By purchasing our services, you acknowledge that you have read, understood, and agree to this refund policy. This policy is part of our Terms of Service and is legally binding.
               </p>
             </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

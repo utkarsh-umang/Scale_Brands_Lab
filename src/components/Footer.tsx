@@ -1,32 +1,22 @@
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-gray-300">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
 
           {/* Company Info */}
-          <div>
+          <div className="md:col-span-5">
             <h3 className="text-white font-bold text-lg mb-4">ScaleBrandsLab</h3>
             <p className="text-gray-400 mb-4">
-              Boost Clients, Grow Followers, Maximize Exposure with our viral content formula.
+              Turn Your Expertise Into Audience, Authority, and Leads by Telling Better Stories.
             </p>
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-sm">Delhi, India</span>
-              </div>
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-sm">growth@scalebrandslab.com</span>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:col-span-3">
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
@@ -38,7 +28,7 @@ export default function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div>
+          <div className="md:col-span-2">
             <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
               <li><a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
@@ -47,23 +37,25 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Business Info */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Business Information</h4>
+          {/* Contact */}
+          <div className="md:col-span-2">
+            <h4 className="text-white font-semibold mb-4">Contact</h4>
             <div className="space-y-3">
-              <div>
-                <p className="text-sm text-gray-400">Proprietor:</p>
-                <p className="text-white font-medium">UTKARSH KUMAR</p>
+              <div className="flex items-center">
+                <Mail className="h-4 w-4 mr-2 text-blue-400" />
+                <a
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                  href="mailto:team@scalebrandslab.com"
+                >
+                  team@scalebrandslab.com
+                </a>
               </div>
-              <div>
-                <p className="text-sm text-gray-400">Address:</p>
-                <p className="text-white text-sm">
-                  245 Pocket 1 DDA SFS Flat<br />
-                  South West Delhi, Dwarka Sec-6<br />
-                  Sector 5 Dwarka, Dwarka Sec-6<br />
-                  Delhi, India - 110075
-                </p>
-              </div>
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400 transition-colors"
+              >
+                Get in touch
+              </a>
             </div>
           </div>
         </div>

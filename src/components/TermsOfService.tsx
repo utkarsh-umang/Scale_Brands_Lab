@@ -1,28 +1,21 @@
+import Footer from './Footer';
+
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">Terms of Service</h1>
-          
-          <div className="space-y-8 text-gray-700">
-            <div>
-              <p className="mb-4">
-                <strong>Effective Date:</strong> {new Date().toLocaleDateString()}
-              </p>
-              <p className="mb-4">
-                <strong>Business Name:</strong> ScaleBrandsLab<br />
-                <strong>Proprietor:</strong> UTKARSH KUMAR<br />
-                <strong>Address:</strong> 245 Pocket 1 DDA SFS Flat, South West Delhi, Dwarka Sec-6, Sector 5 Dwarka, Dwarka Sec-6, Delhi, India - 110075
-              </p>
-            </div>
+    <>
+      <div className="min-h-screen bg-gray-50 pt-16">
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">Terms of Service</h1>
+            
+            <div className="space-y-8 text-gray-700">
 
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h2>
-              <p className="mb-4">
-                By accessing and using ScaleBrandsLab's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
-              </p>
-            </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+                <p className="mb-4">
+                  By accessing and using ScaleBrandsLab's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                </p>
+              </div>
 
             <div>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Services Description</h2>
@@ -122,13 +115,14 @@ export default function TermsOfService() {
                 For any questions regarding these terms, please contact us at:
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p><strong>Email:</strong> growth@scalebrandslab.com</p>
-                <p><strong>Address:</strong> 245 Pocket 1 DDA SFS Flat, South West Delhi, Dwarka Sec-6, Sector 5 Dwarka, Dwarka Sec-6, Delhi, India - 110075</p>
+                <p><strong>Email:</strong> team@scalebrandslab.com</p>
               </div>
+            </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
