@@ -45,7 +45,7 @@ export default function QuickOverview() {
         {/* Title and Description */}
         <div className="max-w-5xl mx-auto text-center mb-12">
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            Get a comprehensive look at what Scale Brands Lab can do for your business. 
+            Get a comprehensive look at what ScaleBrandsLab can do for your business. 
             Ready to take the next step?
           </p>
           <div className="text-center mt-4">

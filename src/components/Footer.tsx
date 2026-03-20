@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-sm">growth@scalebrandslab.com</span>
+                <span className="text-sm">growth@ScaleBrandsLab.com</span>
               </div>
             </div>
           </div>

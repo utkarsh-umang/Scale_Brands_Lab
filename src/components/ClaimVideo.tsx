@@ -45,7 +45,7 @@ export default function ClaimVideo() {
         {/* Title and Description */}
         <div className="max-w-5xl mx-auto text-center flex-shrink-0">
           <p className="text-slate-300 text-base max-w-2xl mx-auto mb-3">
-            Get a comprehensive look at what Scale Brands Lab can do for your business. 
+            Get a comprehensive look at what ScaleBrandsLab can do for your business. 
             Ready to take the next step?
           </p>
           <div className="text-center">

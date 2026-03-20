@@ -122,7 +122,7 @@ export default function TermsOfService() {
                 For any questions regarding these terms, please contact us at:
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p><strong>Email:</strong> growth@scalebrandslab.com</p>
+                <p><strong>Email:</strong> growth@ScaleBrandsLab.com</p>
                 <p><strong>Address:</strong> 245 Pocket 1 DDA SFS Flat, South West Delhi, Dwarka Sec-6, Sector 5 Dwarka, Dwarka Sec-6, Delhi, India - 110075</p>
               </div>
             </div>

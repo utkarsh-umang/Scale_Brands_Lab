@@ -143,7 +143,7 @@ export default function Header() {
             onClick={handleLogoClick}
           >
             <Rocket className="h-6 w-6" />
-            <span className="text-lg font-extrabold tracking-wide uppercase">ScaleBrandsLab</span>
+            <span className="text-lg font-extrabold tracking-wide">ScaleBrandsLab</span>
           </div>
 
           {/* Right CTA */}
