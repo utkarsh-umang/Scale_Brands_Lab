@@ -1,6 +1,7 @@
 import React from 'react';
-import { Menu, X, Rocket, ChevronDown, FileText, Image } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Image } from 'lucide-react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -142,8 +143,12 @@ export default function Header() {
             className="flex items-center gap-2 cursor-pointer md:absolute md:left-1/2 md:-translate-x-1/2"
             onClick={handleLogoClick}
           >
-            <Rocket className="h-6 w-6" />
-            <span className="text-lg font-extrabold tracking-wide">ScaleBrandsLab</span>
+            <img src={logo} alt="ScaleBrandsLab logo" className="h-8 w-8 object-contain" />
+            <span className="hidden md:inline text-2xl md:text-3xl font-extrabold tracking-wide">
+              <span style={{ color: '#2563eb' }}>S</span>cale
+              <span style={{ color: '#2563eb' }}>B</span>rands
+              <span style={{ color: '#2563eb' }}>L</span>ab
+            </span>
           </div>
 
           {/* Right CTA */}

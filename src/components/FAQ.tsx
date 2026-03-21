@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     question: "What's the next step once I decide on a package?",
-    answer: "Once you choose a package, you'll be directed to a checkout page. After payment, you'll receive an onboarding email to join your dedicated Slack channel."
+    answer: "Once you choose a package and complete checkout, we send your onboarding email with login credentials for our studio platform. From there, you can upload footage, collaborate with editors, set posting timelines for our social media manager, and add custom instructions."
   },
   {
     question: "What's my ROI?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "How do I cancel if I don't like it?",
-    answer: "You can cancel anytime through your dashboard or by notifying your account manager in Slack. We offer a no-questions-asked cancellation policy."
+    answer: "You can cancel anytime through your dashboard. Until then, all collaboration happens inside our studio platform, where you can manage uploads, QA with editors, timeline scheduling, and instructions in one place."
   },
   {
     question: "Why would I choose ScaleBrandsLab over someone else?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "What's the onboarding process like?",
-    answer: "It's simple: Join Slack, fill out a brief creative questionnaire, and upload your raw footage. We'll match you with the perfect editor and start within 24 hours."
+    answer: "It’s simple: complete a brief creative questionnaire, then we send your login credentials for our studio platform. You’ll upload raw footage there, do QA directly with editors, schedule upload timelines for our social media manager, and add custom instructions before production starts."
   },
   {
     question: "Will you help me do my YouTube videos and all of my post production too? (Thumbnails, Titles etc)",
@@ -40,11 +40,11 @@ const faqs = [
   },
   {
     question: "What if I need or want to make changes to a video?",
-    answer: "We offer revisions on every video. Just leave a comment in the delivery thread on Slack, and your editor will make the adjustments promptly."
+    answer: "We offer revisions on every video. Just leave your QA notes inside our studio platform, and your editor will make updates quickly. You can also add custom instructions there for future edits and posting timelines."
   },
   {
     question: "How do you get my content to edit it?",
-    answer: "You can share your raw files via Google Drive, Dropbox, or Frame.io. We provide clear instructions on the best way to organize your footage for us."
+    answer: "You’ll upload your raw files directly in our studio platform using your client login. The same workspace is where you can do QA with editors, set video upload timelines for our social media manager, and add any custom instructions."
   },
   {
     question: "Do you guarantee me growth?",
@@ -71,12 +71,8 @@ const faqs = [
     answer: "Yes, we can provide a sample edit for qualified clients to demonstrate our style and quality before you commit to a full package."
   },
   {
-    question: "What do the \"hour blocks\" mean in the pricing structure?",
-    answer: "Hour blocks represent the amount of raw footage processed per month. This allows for flexibility across different content types and lengths."
-  },
-  {
     question: "Can I post my own content if I want to?",
-    answer: "Of course! We can provide you with the final files for manual posting, or we can handle the entire distribution process for you—whichever you prefer."
+    answer: "Of course! We can provide you with the final files for manual posting, or we can handle the entire distribution process for you. Whatever you prefer."
   }
 ];
 

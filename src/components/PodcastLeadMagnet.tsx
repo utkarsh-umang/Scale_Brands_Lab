@@ -4,7 +4,6 @@ import { sendSlackNotification } from "../utils/slack";
 const deliverables = [
     { icon: "🎣", tag: "PAGE 2", title: "Viral Hook Ideas", desc: "3 scroll-stopping hooks crafted to get more clicks on your podcast clips", color: "#3B5BDB", accent: "#2563eb" },
     { icon: "🤝", tag: "PAGE 3", title: "Podcast Collab List", desc: "Curated list of podcasts in your niche + a plug-and-play outreach template", color: "#1971C2", accent: "#3b82f6" },
-    { icon: "🔥", tag: "PAGE 4", title: "Hot Topics Research", desc: "Trending topic ideas blowing up right now, with channels that proved them", color: "#1864AB", accent: "#60a5fa" },
     { icon: "🖼️", tag: "PAGE 5", title: "Thumbnail Designs", desc: "Custom sample thumbnails designed specifically for your podcast channel", color: "#2F9E44", accent: "#22c55e" },
     { icon: "🎬", tag: "PAGE 6", title: "Complimentary Video", desc: "A personalized video walkthrough explaining your full audit strategy", color: "#5C3BC0", accent: "#8b5cf6" },
 ];
@@ -151,19 +150,10 @@ export default function PodcastLeadMagnet() {
                 }}
             />
 
-            <div className="grid md:grid-cols-2 max-w-[1100px] w-full bg-white rounded-[24px] border border-slate-200 z-10 overflow-hidden shadow-xl shadow-slate-200/50 relative">
+            <div className="grid md:grid-cols-2 max-w-[1280px] w-full mt-8 md:mt-12 bg-white rounded-[24px] border border-slate-200 z-10 overflow-hidden shadow-xl shadow-slate-200/50 relative">
 
                 {/* ——— LEFT PANEL ——— */}
                 <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-slate-200 flex flex-col bg-white">
-
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-[#2563eb]/20 rounded-full mb-8 self-start">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#2563eb] shadow-[0_0_6px_#2563eb]" />
-                        <span className="text-[#2563eb] text-[10px] tracking-[0.1em] font-semibold uppercase font-sans">
-                            ScaleBrandsLab • Free Audit
-                        </span>
-                    </div>
-
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
                         {/* Left Column: Phones */}
                         <div className="flex flex-col items-center justify-center gap-8 border-b lg:border-b-0 lg:border-r border-slate-100 pb-8 lg:pb-0 lg:pr-8 mx-auto lg:mx-0 shrink-0">

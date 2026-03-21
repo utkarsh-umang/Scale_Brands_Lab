@@ -1,49 +1,42 @@
+import Footer from './Footer';
+
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
-          
-          <div className="space-y-8 text-gray-700">
-            <div>
-              <p className="mb-4">
-                <strong>Effective Date:</strong> {new Date().toLocaleDateString()}
-              </p>
-              <p className="mb-4">
-                <strong>Business Name:</strong> ScaleBrandsLab<br />
-                <strong>Proprietor:</strong> UTKARSH KUMAR<br />
-                <strong>Address:</strong> 245 Pocket 1 DDA SFS Flat, South West Delhi, Dwarka Sec-6, Sector 5 Dwarka, Dwarka Sec-6, Delhi, India - 110075
-              </p>
-            </div>
+    <>
+      <div className="min-h-screen bg-gray-50 pt-16">
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
+            
+            <div className="space-y-8 text-gray-700">
 
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Information We Collect</h2>
-              <p className="mb-4">
-                We collect information you provide directly to us, such as when you:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Fill out contact forms or inquiry forms</li>
-                <li>Subscribe to our newsletter</li>
-                <li>Communicate with us via email or phone</li>
-                <li>Use our services</li>
-                <li>Make payments for our services</li>
-              </ul>
-            </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Information We Collect</h2>
+                <p className="mb-4">
+                  We collect information you provide directly to us, such as when you:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Fill out contact forms or inquiry forms</li>
+                  <li>Subscribe to our newsletter</li>
+                  <li>Communicate with us via email or phone</li>
+                  <li>Use our services</li>
+                  <li>Make payments for our services</li>
+                </ul>
+              </div>
 
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Types of Information</h2>
-              <p className="mb-4">
-                The information we collect may include:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Name and contact information (email, phone number, address)</li>
-                <li>Business information and social media profiles</li>
-                <li>Payment information (processed securely through payment processors)</li>
-                <li>Communication preferences</li>
-                <li>Usage data and analytics</li>
-              </ul>
-            </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Types of Information</h2>
+                <p className="mb-4">
+                  The information we collect may include:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Name and contact information (email, phone number, address)</li>
+                  <li>Business information and social media profiles</li>
+                  <li>Payment information (processed securely through payment processors)</li>
+                  <li>Communication preferences</li>
+                  <li>Usage data and analytics</li>
+                </ul>
+              </div>
 
             <div>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. How We Use Your Information</h2>
@@ -114,13 +107,14 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p><strong>Email:</strong> growth@ScaleBrandsLab.com</p>
-                <p><strong>Address:</strong> 245 Pocket 1 DDA SFS Flat, South West Delhi, Dwarka Sec-6, Sector 5 Dwarka, Dwarka Sec-6, Delhi, India - 110075</p>
+                <p><strong>Email:</strong> team@scalebrandslab.com</p>
               </div>
+            </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
