@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { usePageAnalytics } from './hooks/usePageAnalytics';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -20,6 +21,7 @@ import ScrollToTop from './components/ScrollToTop';
 import PodcastLeadMagnet from './components/PodcastLeadMagnet';
 
 function HomePage() {
+  usePageAnalytics('home');
   return (
     <>
       <main>

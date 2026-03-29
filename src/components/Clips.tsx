@@ -1,7 +1,9 @@
 import { ArrowRight } from 'lucide-react';
 import Footer from './Footer';
+import { usePageAnalytics } from '../hooks/usePageAnalytics';
 
 export default function Clips() {
+  usePageAnalytics('clips');
   const videos = [
     { id: 1,  url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/1.mp4',  title: 'From Failure to Purpose' },
     { id: 2,  url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/2.mp4',  title: 'Stop Doom Scrolling' },
