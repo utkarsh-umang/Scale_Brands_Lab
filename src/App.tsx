@@ -51,7 +51,8 @@ function MainLayout() {
 function AppContent() {
   return (
     <Routes>
-      <Route path="/sample-robert" element={<SampleRobert />} />
+      <Route path="/sample-robert-1" element={<SampleRobert sample={1} />} />
+      <Route path="/sample-robert-2" element={<SampleRobert sample={2} />} />
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/watch" element={<Watch />} />

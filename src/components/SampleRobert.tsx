@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 type SampleAssets = {
   imageId: string;
@@ -44,39 +44,17 @@ function PortraitFrame({
   );
 }
 
-export default function SampleRobert() {
-  const [activeSample, setActiveSample] = useState<1 | 2>(1);
-  const { imageId, videoId } = SAMPLES[activeSample];
+export default function SampleRobert({ sample }: { sample: 1 | 2 }) {
+  const { imageId, videoId } = SAMPLES[sample];
   const imageSrc = driveImageSrc(imageId);
   const imageFallbackSrc = driveImageFallbackSrc(imageId);
   const videoEmbedSrc = driveVideoEmbedSrc(videoId);
 
   return (
-    <div className="min-h-screen bg-neutral-950 flex flex-col items-center px-4 py-8 sm:py-10">
-      <div className="flex gap-2 sm:gap-3 mb-8 sm:mb-10 w-full max-w-3xl justify-center">
-        {([1, 2] as const).map((sample) => {
-          const isActive = activeSample === sample;
-          return (
-            <button
-              key={sample}
-              type="button"
-              onClick={() => setActiveSample(sample)}
-              className={`min-w-[7.5rem] px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
-                isActive
-                  ? 'bg-white text-neutral-950'
-                  : 'bg-white/10 text-white hover:bg-white/20'
-              }`}
-            >
-              Sample {sample}
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 w-full max-w-3xl flex-1">
+    <div className="min-h-screen bg-neutral-950 flex flex-col items-center justify-center px-4 py-8 sm:py-10">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 w-full max-w-3xl">
         <PortraitFrame className="order-2 sm:order-1">
           <img
-            key={imageId}
             src={imageSrc}
             alt=""
             referrerPolicy="no-referrer"
@@ -91,7 +69,6 @@ export default function SampleRobert() {
 
         <PortraitFrame className="order-1 sm:order-2">
           <iframe
-            key={videoId}
             src={videoEmbedSrc}
             title=""
             className="absolute inset-0 h-full w-full border-0"
