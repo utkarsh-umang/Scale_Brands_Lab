@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 const DRIVE_IMAGE_ID = '1UhuvlctnTzoOuiisnLY-h4YMbonDatId';
 const DRIVE_VIDEO_ID = '1C21WJKJdoBH-KlapRxO7oI8X4cViQa3A';
 
-// lh3 URL embeds reliably; uc?export=view often fails in <img> due to redirects
 const imageSrc = `https://lh3.googleusercontent.com/d/${DRIVE_IMAGE_ID}`;
+const imageFallbackSrc = `https://drive.google.com/thumbnail?id=${DRIVE_IMAGE_ID}&sz=w2000`;
 const videoEmbedSrc = `https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/preview`;
 
 function PortraitFrame({ children }: { children: ReactNode }) {
@@ -28,6 +28,10 @@ export default function SampleRobert() {
             referrerPolicy="no-referrer"
             className="absolute inset-0 h-full w-full object-contain"
             loading="eager"
+            onError={(e) => {
+              const img = e.currentTarget;
+              if (img.src !== imageFallbackSrc) img.src = imageFallbackSrc;
+            }}
           />
         </PortraitFrame>
 
