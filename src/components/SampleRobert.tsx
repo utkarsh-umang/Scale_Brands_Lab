@@ -3,7 +3,8 @@ import type { ReactNode } from 'react';
 const DRIVE_IMAGE_ID = '1UhuvlctnTzoOuiisnLY-h4YMbonDatId';
 const DRIVE_VIDEO_ID = '1C21WJKJdoBH-KlapRxO7oI8X4cViQa3A';
 
-const imageSrc = `https://drive.google.com/uc?export=view&id=${DRIVE_IMAGE_ID}`;
+// lh3 URL embeds reliably; uc?export=view often fails in <img> due to redirects
+const imageSrc = `https://lh3.googleusercontent.com/d/${DRIVE_IMAGE_ID}`;
 const videoEmbedSrc = `https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/preview`;
 
 function PortraitFrame({ children }: { children: ReactNode }) {
@@ -24,6 +25,7 @@ export default function SampleRobert() {
           <img
             src={imageSrc}
             alt=""
+            referrerPolicy="no-referrer"
             className="absolute inset-0 h-full w-full object-contain"
             loading="eager"
           />
