@@ -20,6 +20,7 @@ import Clips from './components/Clips';
 import ScrollToTop from './components/ScrollToTop';
 import PodcastLeadMagnet from './components/PodcastLeadMagnet';
 import SampleRobert from './components/SampleRobert';
+import SchoolForStartups from './components/SchoolForStartups';
 
 function HomePage() {
   usePageAnalytics('home');
@@ -53,6 +54,8 @@ function AppContent() {
     <Routes>
       <Route path="/sample-robert-1" element={<SampleRobert sample={1} />} />
       <Route path="/sample-robert-2" element={<SampleRobert sample={2} />} />
+      <Route path="/school-for-startups-1" element={<SchoolForStartups sample={1} />} />
+      <Route path="/school-for-startups-2" element={<SchoolForStartups sample={2} />} />
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/watch" element={<Watch />} />
