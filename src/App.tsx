@@ -14,6 +14,7 @@ import ContactPage from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import RefundPolicy from './components/RefundPolicy';
+import SmsOptIn from './components/SmsOptIn';
 import Footer from './components/Footer';
 import SimplePayUButton from './components/PayuPayment';
 import Clips from './components/Clips';
@@ -65,6 +66,7 @@ function AppContent() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/sms-opt-in" element={<SmsOptIn />} />
         <Route path="/pay" element={<SimplePayUButton />} />
         <Route path="/clips" element={<Clips />} />
         <Route path="/audit-report" element={<div className="bg-white"><PodcastLeadMagnet /><Footer /></div>} />

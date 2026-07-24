@@ -64,17 +64,34 @@ export default function PrivacyPolicy() {
                 <li>Legal authorities when required by law</li>
                 <li>Business partners with your explicit consent</li>
               </ul>
+              <p className="mb-4 font-semibold text-gray-900">
+                No mobile information (including your phone number) will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties under any circumstances.
+              </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Data Security</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. SMS / Text Messaging</h2>
+              <p className="mb-4">
+                If you opt in to receive text messages (SMS) from ScaleBrandsLab, we collect your mobile phone number and your consent record for the purpose of sending you the messages you signed up for (such as account notifications, updates, and — where you have agreed — promotional offers).
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Message frequency varies depending on your interactions with us.</li>
+                <li>Message and data rates may apply.</li>
+                <li>You can opt out at any time by replying <strong>STOP</strong> to any message. Reply <strong>HELP</strong> for assistance.</li>
+                <li>Your consent to receive text messages is not a condition of any purchase.</li>
+                <li>We do not sell or share your mobile number or SMS consent with third parties for their own marketing.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Data Security</h2>
               <p className="mb-4">
                 We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Your Rights</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Your Rights</h2>
               <p className="mb-4">
                 You have the right to:
               </p>
@@ -88,21 +105,21 @@ export default function PrivacyPolicy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Cookies</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Cookies</h2>
               <p className="mb-4">
                 We use cookies and similar technologies to enhance your experience on our website. You can control cookie settings through your browser preferences.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Changes to This Policy</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Changes to This Policy</h2>
               <p className="mb-4">
                 We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the effective date.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Contact Us</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Contact Us</h2>
               <p className="mb-4">
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>

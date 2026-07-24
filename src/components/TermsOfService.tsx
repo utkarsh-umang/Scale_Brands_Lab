@@ -96,21 +96,37 @@ export default function TermsOfService() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Governing Law</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. SMS / Text Messaging Terms</h2>
+              <p className="mb-4">
+                By providing your mobile number and opting in, you consent to receive text messages (SMS) from ScaleBrandsLab. These terms govern that messaging program:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Program description:</strong> You will receive messages related to account notifications, service updates, and — where you have expressly agreed — promotional offers.</li>
+                <li><strong>Message frequency:</strong> Message frequency varies based on your interactions with us.</li>
+                <li><strong>Cost:</strong> Message and data rates may apply, as charged by your mobile carrier.</li>
+                <li><strong>Opt-out:</strong> You can cancel at any time by replying <strong>STOP</strong> to any message. After you send STOP, we will send a confirmation and then stop sending messages.</li>
+                <li><strong>Help:</strong> Reply <strong>HELP</strong> for assistance, or email team@scalebrandslab.com.</li>
+                <li><strong>Consent:</strong> Your consent to receive text messages is not a condition of purchasing any goods or services.</li>
+                <li><strong>Carriers:</strong> Carriers are not liable for delayed or undelivered messages.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. Governing Law</h2>
               <p className="mb-4">
                 These terms shall be governed by and construed in accordance with the laws of India, and any disputes shall be subject to the jurisdiction of Delhi courts.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. Changes to Terms</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">12. Changes to Terms</h2>
               <p className="mb-4">
                 We reserve the right to modify these terms at any time. Changes will be effective upon posting on our website. Continued use of our services constitutes acceptance of the modified terms.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">12. Contact Information</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Contact Information</h2>
               <p className="mb-4">
                 For any questions regarding these terms, please contact us at:
               </p>
