@@ -29,8 +29,7 @@ export default function ContactPage() {
       `*Service:* ${formData.service}\n` +
       `*Message:* ${formData.message}`;
 
-    const webhookUrl = import.meta.env.VITE_SLACK_CONTACT_WEBHOOK_URL;
-    const success = await sendSlackNotification(slackMessage, webhookUrl);
+    const success = await sendSlackNotification('contact', slackMessage);
 
     if (success) {
       alert('Thank you for your message! We will get back to you soon.');

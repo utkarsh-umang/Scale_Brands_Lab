@@ -1,23 +1,25 @@
-export const sendSlackNotification = async (message: string, webhookUrl: string) => {
-  if (!webhookUrl) {
-    console.error('Slack webhook URL missing');
-    return false;
-  }
+export type SlackChannel = 'contact' | 'audit';
 
+// VITE_SLACK_API_URL = API Gateway URL for Amplify (e.g. https://xxx.execute-api.ap-south-1.amazonaws.com/slack-notify)
+// If empty, falls back to /api/slack-notify for Vercel-style deployments.
+const API_URL = (import.meta.env.VITE_SLACK_API_URL as string | undefined)?.trim() || '/api/slack-notify';
+
+export const sendSlackNotification = async (channel: SlackChannel, message: string) => {
   try {
-    // We send it as text/plain (default when passing a string body without headers)
-    // to avoid CORS preflight checks that Slack blocks. Slack webhooks accept text/plain.
-    await fetch(webhookUrl, {
+    const response = await fetch(API_URL, {
       method: 'POST',
-      body: JSON.stringify({ text: message }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ channel, message }),
     });
-
-    // Since this is a simple request without CORS headers returned, we can't reliably
-    // read response.ok due to opaque responses, but if fetch doesn't throw a network error, 
-    // it was sent to the server.
-    return true;
+    return response.ok;
   } catch (error) {
-    console.error('Error sending Slack notification via Webhook:', error);
+    console.error('Error sending Slack notification:', error);
     return false;
   }
+};
+
+// Back-compat for old call sites: sendSlackNotification(message, webhookUrl) — keep until all components migrated.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const sendSlackNotificationLegacy = async (message: string, _webhookUrl: string) => {
+  return sendSlackNotification('contact', message);
 };

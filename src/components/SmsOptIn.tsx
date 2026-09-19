@@ -38,8 +38,7 @@ export default function SmsOptIn() {
       `*Email:* ${formData.email}\n` +
       `*Consent:* YES — explicitly opted in via /sms-opt-in`;
 
-    const webhookUrl = import.meta.env.VITE_SLACK_CONTACT_WEBHOOK_URL;
-    await sendSlackNotification(slackMessage, webhookUrl);
+    await sendSlackNotification('contact', slackMessage);
 
     alert('Thank you! You have opted in to receive text messages from ScaleBrandsLab. Reply STOP at any time to unsubscribe.');
     setFormData({ firstName: '', lastName: '', phone: '', email: '' });

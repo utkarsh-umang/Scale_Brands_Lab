@@ -126,8 +126,7 @@ export default function PodcastLeadMagnet() {
                 `*Podcast:* ${formData.podcast || 'N/A'}\n` +
                 `*Link:* ${formData.link || 'N/A'}`;
 
-            const webhookUrl = import.meta.env.VITE_SLACK_AUDIT_WEBHOOK_URL;
-            await sendSlackNotification(slackMessage, webhookUrl);
+            await sendSlackNotification('audit', slackMessage);
 
             // We show the success state regardless to the user
             setSubmitted(true);
