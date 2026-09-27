@@ -5,7 +5,6 @@ import { usePageAnalytics } from '../hooks/usePageAnalytics';
 export default function Clips() {
   usePageAnalytics('clips');
   const videos = [
-    { id: 1,  url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/1.mp4',  title: 'From Failure to Purpose' },
     { id: 2,  url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/2.mp4',  title: 'Stop Doom Scrolling' },
     { id: 3,  url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/3.mp4',  title: 'Fix Your Dry Season' },
     { id: 4,  url: 'https://scale-brands.s3.ap-south-1.amazonaws.com/4.mp4',  title: 'Break Out of the System' },
@@ -72,9 +71,9 @@ export default function Clips() {
         {/* Video Grid Section */}
         <section className="bg-gray-50 py-24 border-t border-gray-100">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
               {videos.map((video) => (
-                <div key={video.id} className="group">
+                <div key={video.id} className="group w-full sm:w-[calc((100%-2rem)/2)] lg:w-[calc((100%-4rem)/3)]">
                   <div className="relative aspect-[9/16] bg-black rounded-[40px] overflow-hidden shadow-xl border-[8px] border-white ring-1 ring-gray-200 group-hover:scale-[1.03] transition-all duration-500">
                     <video
                       className="w-full h-full object-cover"
