@@ -118,10 +118,9 @@ export default function ContactPage() {
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none focus:border-[#2563eb]/40 focus:ring-4 focus:ring-[#2563eb]/5 transition-all appearance-none cursor-pointer"
                   >
                     <option value="" disabled>Select a service…</option>
-                    <option value="Web Design & Development">Web Design & Development</option>
-                    <option value="Brand Identity">Brand Identity</option>
-                    <option value="Product Strategy">Product Strategy</option>
-                    <option value="Consulting">Consulting</option>
+                    <option value="Content Production and Marketing">Content Production and Marketing</option>
+                    <option value="AI Software Solution">AI Software Solution</option>
+                    <option value="Email Marketing">Email Marketing</option>
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
