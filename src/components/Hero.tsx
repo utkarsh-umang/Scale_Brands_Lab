@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import CreatorShowcase from './CreatorShowcase';
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center items-center text-center px-10 pt-40 pb-20 overflow-hidden bg-white max-md:px-8 max-md:pt-28 max-md:pb-16">
+      {/* Decorations are pinned to the original hero height so they stay put above the creator grid */}
+      <div className="absolute inset-x-0 top-0 h-[max(100vh,972px)] max-md:h-[1560px] pointer-events-none">
       {/* Blue Gradient Background */}
       {/* Blue Gradient Background - Blob Effect */}
       <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[550px] bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#2563eb] opacity-20 blur-[100px] rounded-[100%] z-[1] pointer-events-none" />
@@ -52,6 +55,7 @@ export default function Hero() {
           </svg>
         </div>
       </div>
+      </div>
 
       {/* Hero Content */}
       <div className="relative z-[3] max-w-[1280px]">
@@ -81,55 +85,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-[3] mt-[85px] flex gap-[22px] justify-center max-md:flex-col max-md:items-center max-md:gap-5 max-md:mt-[60px]">
-        {/* Card 1 - Katie Melissa */}
-        <Link to="/case-study/katie-melissa" className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-2 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] group block">
-          <div className="absolute inset-0 bg-gray-200 rounded-[30px] overflow-hidden transform-gpu [mask-image:linear-gradient(white,white)]">
-            <img
-              src="https://scale-brands.s3.ap-south-1.amazonaws.com/katie_melissa.jpg"
-              alt="Katie Melissa"
-              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105 rounded-[30px] will-change-transform"
-            />
-          </div>
-          <div className="absolute inset-x-0 bottom-0 h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10 flex flex-col justify-end p-6 pb-7 text-center">
-            <div className="font-extrabold text-2xl text-white mb-1 tracking-tight leading-none uppercase">Katie<br />Melissa</div>
-            <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">240k+ Followers</div>
-          </div>
-          <div className="absolute inset-0 rounded-[35px] border-[5px] border-white pointer-events-none z-20" />
-        </Link>
-
-        {/* Card 2 - Mind Hustler */}
-        <Link to="/case-study/mind-hustler" className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) rotate-2 translate-y-5 hover:rotate-0 hover:translate-y-3 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] max-md:translate-y-0 group block">
-          <div className="absolute inset-0 bg-gray-200 rounded-[30px] overflow-hidden transform-gpu [mask-image:linear-gradient(white,white)]">
-            <img
-              src="https://scale-brands.s3.ap-south-1.amazonaws.com/mind_hustler.jpg"
-              alt="Mind Hustler"
-              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105 rounded-[30px] will-change-transform"
-            />
-          </div>
-          <div className="absolute inset-x-0 bottom-0 h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10 flex flex-col justify-end p-6 pb-7 text-center">
-            <div className="font-extrabold text-2xl text-white mb-1 tracking-tight leading-none uppercase">Mind<br />Hustler</div>
-            <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">350k+ Followers</div>
-          </div>
-          <div className="absolute inset-0 rounded-[35px] border-[5px] border-white pointer-events-none z-20" />
-        </Link>
-
-        {/* Card 3 - Nutty Productions */}
-        <Link to="/case-study/nutty-productions" className="w-[250px] h-[330px] rounded-[35px] shadow-[0_20px_40px_rgba(0,0,0,0.2)] overflow-hidden relative transition-all duration-[400ms] cubic-bezier(0.4,0,0.2,1) -rotate-1 hover:rotate-0 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(37,99,235,0.25)] group block">
-          <div className="absolute inset-0 bg-gray-200 rounded-[30px] overflow-hidden transform-gpu [mask-image:linear-gradient(white,white)]">
-            <img
-              src="https://scale-brands.s3.ap-south-1.amazonaws.com/nutty_productions.jpg"
-              alt="Nutty Productions"
-              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105 rounded-[30px] will-change-transform"
-            />
-          </div>
-          <div className="absolute inset-x-0 bottom-0 h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10 flex flex-col justify-end p-6 pb-7 text-center">
-            <div className="font-extrabold text-2xl text-white mb-1 tracking-tight leading-none uppercase">Nutty<br />Productions</div>
-            <div className="text-xs text-white/90 font-bold uppercase tracking-wider mt-2 bg-white/20 py-1 px-2 rounded-full backdrop-blur-sm inline-block mx-auto">600k+ Subs</div>
-          </div>
-          <div className="absolute inset-0 rounded-[35px] border-[5px] border-white pointer-events-none z-20" />
-        </Link>
-      </div>
+      <CreatorShowcase />
     </section>
   );
 }

@@ -11,6 +11,7 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+  const isTestimonialsPage = location.pathname === '/testimonials';
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -62,6 +63,13 @@ export default function Header() {
     navigate('/');
   };
 
+  // Shared style so every desktop nav item has the same size, padding and hover state
+  const navItemClass = (active = false) =>
+    `inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-full text-[15px] font-medium transition-all ${active
+      ? 'bg-[#2563eb] text-white shadow-[0_4px_14px_rgba(37,99,235,0.35)]'
+      : 'text-white/85 hover:text-white hover:bg-white/10'
+    }`;
+
   const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsMenuOpen(false);
@@ -73,28 +81,27 @@ export default function Header() {
       className={`fixed w-full bg-[#1a1a1a] text-white z-50 transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
     >
-      <nav className="px-[60px] py-5 max-md:px-8 max-md:py-4">
+      <nav className="px-[60px] py-5 max-lg:px-8 max-lg:py-4">
         <div className="flex items-center justify-between">
           {/* Left Navigation */}
-          <div className="hidden md:flex gap-[35px] items-center flex-1">
+          <div className="hidden lg:flex gap-2 items-center flex-1">
             <a
               href="#home"
               onClick={(e) => handleNavigation(e, '#home')}
-              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
+              className={navItemClass()}
             >
               Home
             </a>
 
             {/* Resources Dropdown */}
             <div
-              className="relative resources-dropdown py-2" // Added padding to create a hover bridge
+              className="relative resources-dropdown"
               onMouseEnter={() => setIsResourcesOpen(true)}
               onMouseLeave={() => setIsResourcesOpen(false)}
             >
               <button
                 onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-full transition-all text-[15px] font-medium max-md:text-sm group ${isResourcesOpen ? 'bg-white/10 text-white' : 'text-white/85 hover:text-white'
-                  }`}
+                className={`${navItemClass()} ${isResourcesOpen ? 'bg-white/10 text-white' : ''}`}
               >
                 Resources
                 <ChevronDown className={`h-4 w-4 transition-transform duration-500 ${isResourcesOpen ? 'rotate-180' : ''}`} />
@@ -102,37 +109,46 @@ export default function Header() {
 
               {/* Dropdown Menu */}
               {isResourcesOpen && (
-                <div className="absolute top-[85%] left-0 mt-2 w-64 bg-[#1a1a1a]/95 backdrop-blur-xl rounded-[24px] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden animate-dropdown-lush origin-top-left z-50">
-                  <div className="p-3">
-                    <Link
-                      to="/clips"
-                      onClick={() => setIsResourcesOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                        <Image className="h-4 w-4" />
-                      </div>
-                      <span className="text-sm font-medium">Our portfolio</span>
-                    </Link>
-                    <Link
-                      to="/audit-report"
-                      onClick={() => setIsResourcesOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all">
-                        <FileText className="h-4 w-4" />
-                      </div>
-                      <span className="text-sm font-medium">Audit report</span>
-                    </Link>
+                <div className="absolute top-full left-0 pt-2 w-64 z-50">
+                  <div className="bg-[#1a1a1a]/95 backdrop-blur-xl rounded-[24px] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden animate-dropdown-lush origin-top-left z-50">
+                    <div className="p-3">
+                      <Link
+                        to="/clips"
+                        onClick={() => setIsResourcesOpen(false)}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                          <Image className="h-4 w-4" />
+                        </div>
+                        <span className="text-sm font-medium">Our portfolio</span>
+                      </Link>
+                      <Link
+                        to="/audit-report"
+                        onClick={() => setIsResourcesOpen(false)}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                          <FileText className="h-4 w-4" />
+                        </div>
+                        <span className="text-sm font-medium">Audit report</span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               )}
             </div>
 
+            <Link
+              to="/testimonials"
+              className={navItemClass(isTestimonialsPage)}
+            >
+              Testimonials
+            </Link>
+
             <a
               href="#faq"
               onClick={(e) => handleNavigation(e, '#faq')}
-              className="text-white/85 hover:text-white transition-all text-[15px] font-medium max-md:text-sm"
+              className={navItemClass()}
             >
               FAQ
             </a>
@@ -140,11 +156,11 @@ export default function Header() {
 
           {/* Center Logo */}
           <div
-            className="flex items-center gap-2 cursor-pointer md:absolute md:left-1/2 md:-translate-x-1/2"
+            className="flex items-center gap-2 cursor-pointer lg:absolute lg:left-1/2 lg:-translate-x-1/2"
             onClick={handleLogoClick}
           >
             <img src={logo} alt="ScaleBrandsLab logo" className="h-8 w-8 object-contain" />
-            <span className="hidden md:inline text-2xl md:text-3xl font-extrabold tracking-wide">
+            <span className="hidden sm:inline text-2xl lg:text-3xl font-extrabold tracking-wide">
               <span style={{ color: '#2563eb' }}>S</span>cale
               <span style={{ color: '#2563eb' }}>B</span>rands
               <span style={{ color: '#2563eb' }}>L</span>ab
@@ -152,11 +168,11 @@ export default function Header() {
           </div>
 
           {/* Right CTA */}
-          <div className="hidden md:flex flex-1 justify-end">
+          <div className="hidden lg:flex flex-1 justify-end">
             <a
               href="/contact"
               onClick={handleContactClick}
-              className="bg-transparent text-white px-[30px] py-[11px] rounded-full font-semibold text-sm border-[1.5px] border-white/30 hover:bg-white hover:text-[#1a1a1a] hover:border-white transition-all"
+              className="bg-transparent text-white inline-flex items-center h-10 px-7 rounded-full font-semibold text-sm border-[1.5px] border-white/30 hover:bg-white hover:text-[#1a1a1a] hover:border-white transition-all"
             >
               Start Today
             </a>
@@ -164,7 +180,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex items-center"
+            className="lg:hidden flex items-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
@@ -173,7 +189,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pt-4 pb-2">
+          <div className="lg:hidden pt-4 pb-2">
             <div className="flex flex-col space-y-2">
               <a
                 href="#home"
@@ -205,6 +221,14 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
+
+              <Link
+                to="/testimonials"
+                onClick={() => setIsMenuOpen(false)}
+                className={`transition-colors py-3 px-4 rounded-xl ${isTestimonialsPage ? 'bg-[#2563eb] text-white' : 'text-white/85 hover:text-white hover:bg-white/5'}`}
+              >
+                Testimonials
+              </Link>
 
               <a
                 href="#faq"

@@ -1,44 +1,95 @@
 import React from 'react';
 import { Send } from 'lucide-react';
 import { sendSlackNotification } from '../utils/slack';
+import {
+  validateEmail,
+  validateName,
+  validateMessage,
+  isLikelyBot,
+  sanitizeForSlack,
+} from '../utils/formValidation';
 import Footer from './Footer';
 
+type FormField = 'firstName' | 'lastName' | 'email' | 'service' | 'message';
+type FormErrors = Partial<Record<FormField, string>>;
+
+const EMPTY_FORM = { firstName: '', lastName: '', email: '', service: '', message: '' };
+
+function validateForm(data: typeof EMPTY_FORM): FormErrors {
+  const errors: FormErrors = {};
+  const firstName = validateName(data.firstName, 'First name');
+  const lastName = validateName(data.lastName, 'Last name');
+  const email = validateEmail(data.email);
+  const message = validateMessage(data.message);
+  if (firstName) errors.firstName = firstName;
+  if (lastName) errors.lastName = lastName;
+  if (email) errors.email = email;
+  if (!data.service) errors.service = 'Please select a service.';
+  if (message) errors.message = message;
+  return errors;
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = React.useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    service: '',
-    message: ''
-  });
+  const [formData, setFormData] = React.useState(EMPTY_FORM);
+  const [errors, setErrors] = React.useState<FormErrors>({});
+  const [submitting, setSubmitting] = React.useState(false);
+  // Spam traps: hidden honeypot field + time since form was rendered
+  const [honeypot, setHoneypot] = React.useState('');
+  const formLoadedAt = React.useRef(Date.now());
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const name = e.target.name as FormField;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: e.target.value
     });
+    if (errors[name]) setErrors({ ...errors, [name]: undefined });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    if (submitting) return;
+
+    // Silently drop bot submissions — pretend success so bots don't adapt
+    if (isLikelyBot(honeypot, formLoadedAt.current)) {
+      alert('Thank you for your message! We will get back to you soon.');
+      setFormData(EMPTY_FORM);
+      return;
+    }
+
+    const validationErrors = validateForm(formData);
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
+
     // Create Slack message
     const slackMessage = `🚀 *New Contact Form Submission*\n\n` +
-      `*Name:* ${formData.firstName} ${formData.lastName}\n` +
-      `*Email:* ${formData.email}\n` +
-      `*Service:* ${formData.service}\n` +
-      `*Message:* ${formData.message}`;
+      `*Name:* ${sanitizeForSlack(formData.firstName)} ${sanitizeForSlack(formData.lastName)}\n` +
+      `*Email:* ${sanitizeForSlack(formData.email)}\n` +
+      `*Service:* ${sanitizeForSlack(formData.service)}\n` +
+      `*Message:* ${sanitizeForSlack(formData.message)}`;
 
+    setSubmitting(true);
     const success = await sendSlackNotification('contact', slackMessage);
+    setSubmitting(false);
 
     if (success) {
       alert('Thank you for your message! We will get back to you soon.');
-      setFormData({ firstName: '', lastName: '', email: '', service: '', message: '' });
+      setFormData(EMPTY_FORM);
+      formLoadedAt.current = Date.now();
     } else {
-      alert('Congratulations! Your message was sent successfully.');
-      setFormData({ firstName: '', lastName: '', email: '', service: '', message: '' });
+      alert('Something went wrong sending your message. Please try again, or book a call using the link below.');
     }
   };
+
+  const fieldClass = (field: FormField) =>
+    `bg-slate-50 border rounded-xl px-4 py-3 text-sm text-slate-900 outline-none focus:ring-4 transition-all ${
+      errors[field]
+        ? 'border-red-400 focus:border-red-400 focus:ring-red-500/10'
+        : 'border-slate-200 focus:border-[#2563eb]/40 focus:ring-[#2563eb]/5'
+    }`;
+
+  const fieldError = (field: FormField) =>
+    errors[field] ? <p className="text-[12px] text-red-500">{errors[field]}</p> : null;
 
   return (
     <>
@@ -70,7 +121,19 @@ export default function ContactPage() {
               </h1>
             </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5 flex-1">
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5 flex-1">
+              {/* Honeypot: hidden from humans, bots tend to fill it */}
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute -left-[9999px] w-px h-px opacity-0"
+              />
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[12px] font-semibold tracking-[0.08em] uppercase text-slate-500">First Name</label>
@@ -80,8 +143,12 @@ export default function ContactPage() {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="Alex"
-                    className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none focus:border-[#2563eb]/40 focus:ring-4 focus:ring-[#2563eb]/5 transition-all"
+                    maxLength={50}
+                    autoComplete="given-name"
+                    aria-invalid={!!errors.firstName}
+                    className={fieldClass('firstName')}
                   />
+                  {fieldError('firstName')}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[12px] font-semibold tracking-[0.08em] uppercase text-slate-500">Last Name</label>
@@ -91,8 +158,12 @@ export default function ContactPage() {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Morgan"
-                    className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none focus:border-[#2563eb]/40 focus:ring-4 focus:ring-[#2563eb]/5 transition-all"
+                    maxLength={50}
+                    autoComplete="family-name"
+                    aria-invalid={!!errors.lastName}
+                    className={fieldClass('lastName')}
                   />
+                  {fieldError('lastName')}
                 </div>
               </div>
 
@@ -104,8 +175,12 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="hello@company.com"
-                  className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none focus:border-[#2563eb]/40 focus:ring-4 focus:ring-[#2563eb]/5 transition-all"
+                  maxLength={254}
+                  autoComplete="email"
+                  aria-invalid={!!errors.email}
+                  className={fieldClass('email')}
                 />
+                {fieldError('email')}
               </div>
 
               <div className="flex flex-col gap-1.5">
@@ -115,7 +190,8 @@ export default function ContactPage() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none focus:border-[#2563eb]/40 focus:ring-4 focus:ring-[#2563eb]/5 transition-all appearance-none cursor-pointer"
+                    aria-invalid={!!errors.service}
+                    className={`w-full appearance-none cursor-pointer ${fieldClass('service')}`}
                   >
                     <option value="" disabled>Select a service…</option>
                     <option value="Content Production and Marketing">Content Production and Marketing</option>
@@ -128,6 +204,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                 </div>
+                {fieldError('service')}
               </div>
 
               <div className="flex flex-col gap-1.5">
@@ -137,15 +214,19 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell us about your project, timeline, and goals…"
-                  className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none focus:border-[#2563eb]/40 focus:ring-4 focus:ring-[#2563eb]/5 transition-all min-h-[110px] resize-none"
+                  maxLength={3000}
+                  aria-invalid={!!errors.message}
+                  className={`min-h-[110px] resize-none ${fieldClass('message')}`}
                 />
+                {fieldError('message')}
               </div>
 
               <button
                 type="submit"
-                className="mt-2 w-full bg-[#2563eb] text-white font-bold py-3.5 px-7 rounded-xl flex items-center justify-center gap-2.5 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(37,99,235,0.25)] hover:bg-[#1d4ed8] transition-all duration-200"
+                disabled={submitting}
+                className="mt-2 w-full bg-[#2563eb] text-white font-bold py-3.5 px-7 rounded-xl flex items-center justify-center gap-2.5 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(37,99,235,0.25)] hover:bg-[#1d4ed8] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                Send Message
+                {submitting ? 'Sending…' : 'Send Message'}
                 <Send className="w-4 h-4" strokeWidth={2.5} />
               </button>
 

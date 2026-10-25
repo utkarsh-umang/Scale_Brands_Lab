@@ -22,6 +22,7 @@ import ScrollToTop from './components/ScrollToTop';
 import PodcastLeadMagnet from './components/PodcastLeadMagnet';
 import SampleRobert from './components/SampleRobert';
 import SchoolForStartups from './components/SchoolForStartups';
+import Testimonials from './components/Testimonials';
 
 function HomePage() {
   usePageAnalytics('home');
@@ -69,6 +70,7 @@ function AppContent() {
         <Route path="/sms-opt-in" element={<SmsOptIn />} />
         <Route path="/pay" element={<SimplePayUButton />} />
         <Route path="/clips" element={<Clips />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/audit-report" element={<div className="bg-white"><PodcastLeadMagnet /><Footer /></div>} />
         <Route path="/case-study/:creatorId" element={<CreatorCaseStudy />} />
       </Route>
